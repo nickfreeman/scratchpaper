@@ -21,6 +21,26 @@
   @extend .columns;
   @extend .text-center;
   }
+
+.row {
+  max-width: 100%;
+}
+
+.panel {
+  max-height: 100%;
+  min-height: 200px;
+  border-width: 0px;
+  background: white;
+}
+
+.panel p {
+  font-size: 25px;
+}
+
+.panel img {
+  
+}
+
 // create your own classes
 // to make views framework-neutral
 .column {
@@ -36,11 +56,13 @@
   @extend .button;
   @extend .radius;
   }
+
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #eee;
+  background-color: #A8A8A8;
+  padding-top: 25px;
   }
 section {
   @extend .row;
