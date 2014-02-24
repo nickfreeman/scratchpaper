@@ -9,11 +9,80 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+
+
+    <!-- Added for Temp Splash page -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
+    <style>
+        html {
+            background: url("http://farm8.staticflickr.com/7391/12313669475_5fdea15b45_h.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            padding-top: 60px;
+            font-size: 16px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 200;
+            background: transparent;
+        }
+
+        h1 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+            font-size: 55px;
+        }
+
+        .panel {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .margin-base-vertical {
+            margin: 40px 0;
+        }
+
+    </style>
+
+
   </head>
   <body>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+
+    <!-- ONLY ADDED AS TEMP SPLASH PAGE -->
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 panel panel-default">
+                    <h1 class="margin-base-vertical">Welcome to WhiteBoard</h1>
+                    <p>Our app aims to bring new ideas to life by connecting people with great ideas to those who can help make them happen.
+                    Many great apps and ideas are born at hackathons, which are increasingly growing in size and participation. We want to include non technical students in these hackathons by encouraging them to voice their ideas, and recieve feedback as well as find developers to work with in upcoming competitions. We believe it is important to draw people from other disciplines into the tech world, because they are more likely to have different ideas and problems they wish to solve than those heavily involved in it. We hope to build a place where people can collaborate and voice their interest in new ideas, increasing the chance that an idea gets built when there is lots of support. In addition to helping non technical people, we also aim to attract more hackers to hackathons, who may hesitate to come if they lack a team or a good idea.</p>
+                                    <form class="margin-base-vertical">
+                                        <p class="input-group">
+                                            <span class="input-group-addon"><span class="icon-envelope"></span></span>
+                                            <input type="text" class="form-control input-lg" name="email" placeholder="whiteboard@whiteboard.com" />
+                                        </p>
+                                        <p class="text-center">
+                                            <button type="submit" class="btn btn-lg">Keep me posted</button>
+                                        </p>
+                                        </span>
+                                    </form>
+
+                                    <div class="margin-base-vertical">
+                                        <small class="text-muted"><a href="http://www.flickr.com/photos/96625834@N02/12313669475/">Background picture by Nick Freeman</a>. Used under <a href="http://creativecommons.org/licenses/by/2.0/deed.en">Creative Commons - Attribution</a>.</small>
+                                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
