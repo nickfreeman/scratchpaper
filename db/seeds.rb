@@ -16,4 +16,7 @@
 #puts 'user: ' << user.name
 #user.add_role :admin
 
-User.create(:name => 'test', :email => 'test@test.com', :password => 'test')
+I18n.enforce_available_locales = false
+
+# Create a test user
+User.create(:name => 'test', :email => 'test@test.com', :password => 'testtest')
