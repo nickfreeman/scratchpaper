@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'acts_as_votable'
 gem 'acts_as_follower'
+gem 'bootstrap-sass'
 gem "masonry-rails", "~> 0.2.1"
 group :development do
   gem 'better_errors'
