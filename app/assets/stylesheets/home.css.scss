@@ -1,3 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item {
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  float: left;
+  background: #333;
+  color: #ddd;
+  padding: 10px;
+  font-size: 20px;
+  font: lato;
+  font-weight: lighter;
+}
+
+.item.w2 {
+	width: 460px;
+	height: 220px;
+	margin: 10px;
+	float: left;
+	background: #333;
+	color: #ddd;
+	padding: 10px;
+	font-size: 30px;
+}
+
+#masonry-container {
+	margin: auto;
+	padding-top: 10px;
+}
+
+body {
+	background: black;
+}
+
+main {
+	background: #111;
+	font-weight: lighter;
+}

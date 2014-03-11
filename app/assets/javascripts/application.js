@@ -16,3 +16,15 @@
 //= require_tree .
 //= require bootstrap
 //= require masonry/jquery.masonry
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
+
+$(function(){
+  $('#masonry-container').masonry({
+    // options
+    itemSelector : '.item',
+    columnWidth : 240,
+    isAnimated: true
+  });
+});
