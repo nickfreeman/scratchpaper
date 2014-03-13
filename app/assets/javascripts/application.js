@@ -25,6 +25,7 @@ $(function(){
     // options
     itemSelector : '.item',
     columnWidth : 10,
-    isAnimated: true
+    isAnimated: true,
+    isFitWidth: true
   });
 });
