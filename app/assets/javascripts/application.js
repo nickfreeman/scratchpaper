@@ -24,7 +24,6 @@ $(function(){
   $('#masonry-container').masonry({
     // options
     itemSelector : '.item',
-    columnWidth : 10,
     isAnimated: true,
     isFitWidth: true
   });
