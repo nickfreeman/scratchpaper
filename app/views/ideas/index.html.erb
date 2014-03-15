@@ -4,13 +4,15 @@
 
 
 <body> 
-  <div id="wrapper">
-  <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+    <div id="wrapper">
+    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 
-  <% @ideas.each do |idea| %>
-      <div class="item">
-        <p><%= idea.description %><p>
-      </div>
+        <% @ideas.each do |idea| %>
+            <%= link_to (idea) do %>
+                <div class="item">
+                    <p><%= idea.description %><p>
+                </div>
+          <% end %>
     <%end%>
 
 
@@ -240,7 +242,7 @@
 
 
 
-
+<!--
 <h1>Listing ideas</h1>
 
 <table>
@@ -267,3 +269,4 @@
 <br>
 
 <%= link_to 'New Idea', new_idea_path %>
+-->

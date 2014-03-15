@@ -19,6 +19,14 @@
 I18n.enforce_available_locales = false
 
 # Create a test user
-User.create(:name => 'test', :email => 'test@test.com', :password => 'testtest')
-Idea.create(:description => 'this is a sooper interesting idea')
+User.create(:name => 'user 1', :email => 'test@test.com', :password => 'testtest')
+Idea.create(:description => 'idea 1')
+Idea.create(:description => 'idea 2')
+Idea.create(:description => 'idea 3')
+Idea.create(:description => 'idea 4')
+Idea.create(:description => 'idea 5')
+Idea.create(:description => 'idea 6')
+Idea.create(:description => 'idea 7')
+Idea.create(:description => 'idea 8')
+Idea.create(:description => 'idea 9')
 
