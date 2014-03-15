@@ -5,6 +5,7 @@
 
 main {
 	background: #eee;
+	margin-top: 0px;
 }
 
 body {
@@ -62,6 +63,9 @@ body {
 	right: 5px;
 	bottom: 5px;
 	position: absolute;
-	width: 1em;
-	height: 1em;
+	width: 15px;
+	height: 15px;
+	img {
+		-webkit-filter: invert(70%); 
+	}
 }
