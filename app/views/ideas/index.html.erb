@@ -4,8 +4,15 @@
 </head>
 
 
-<body> 
-    <div id="wrapper">
+<body>
+  <section id="newIdea">
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" placeholder="What's your latest idea?">
+      <span class="input-group-addon">140</span>
+    </div>
+  </section>
+
+  <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 
         <% @ideas.each do |idea| %>
@@ -233,7 +240,6 @@
         <img src="assets/star.png">
       </div>
     </div>
-
   </div>
 </div>
 
