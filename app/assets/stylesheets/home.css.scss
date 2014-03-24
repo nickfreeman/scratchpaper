@@ -2,90 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 main {
-	background: #eee;
-	margin-top: 0px;
-	padding: 0px;
+    background: url("http://farm8.staticflickr.com/7391/12313669475_5fdea15b45_h.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-	padding-top: 50px;
-	font-size: 20px;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 200;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    background: transparent;
 }
 
-#wrapper {
-	max-width: 1200px;
-	margin: 0 auto;
+h1 {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
 }
 
-#masonry-container {
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 10px;
+.panel {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-.navbar.navbar-inverse.navbar-fixed-top {
-	background: #333;
-	border-bottom: 0px;
+#splashPanel {
+    padding-top: 20px;
 }
 
-.item {
-    width: 220px;
-    height: 220px;
-    margin: 10px;
-    float: left;
-    background: white;
-    color: #333;
-    padding: 15px;
-    font-size: 20px;
-    position: absolute;
-    border-radius: 4px;
-}
 
-.item.w2 {
-	width: 460px;
-	padding: 0px;
-}
-
-@media screen and (max-width: 480px) {
-	.item {
-		font-size: 17px;
-	}
-}
-
-@media screen and (max-width: 400px) {
-	.body {
-		font-size: 16px;
-	}
-}
-	
-.item.w2 p {
-	float: left;
-	width: 220px;
-	height: 220px;
-	padding: 15px;
-	margin-left: 15px;
-}
-
-.item.w2 .img-container {
-	float: left;
-	height: 200px;
-	width: 200px;
-	border-radius: 4px;
-	margin-top: 10px;
-	margin-left: 10px;
-}
-
-.follow-button {
-	right: 10px;
-	bottom: 10px;
-	position: absolute;
-	width: 15px;
-	height: 15px;
-	img {
-		-webkit-filter: invert(70%); 
-	}
+.margin-base-vertical {
+    margin: 40px 0;
 }

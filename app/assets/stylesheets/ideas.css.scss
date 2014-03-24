@@ -1,3 +1,90 @@
 // Place all the styles related to the Ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+main {
+	background: #eee;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+body {
+	padding-top: 50px;
+	font-size: 20px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+}
+
+#wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#masonry-container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+	background: #333;
+	border-bottom: 0px;
+}
+
+.item {
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    float: left;
+    background: white;
+    color: #333;
+    padding: 15px;
+    font-size: 20px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.item.w2 {
+	width: 460px;
+	padding: 0px;
+}
+
+@media screen and (max-width: 480px) {
+	.item {
+		font-size: 17px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.body {
+		font-size: 16px;
+	}
+}
+	
+.item.w2 p {
+	float: left;
+	width: 220px;
+	height: 220px;
+	padding: 15px;
+	margin-left: 15px;
+}
+
+.item.w2 .img-container {
+	float: left;
+	height: 200px;
+	width: 200px;
+	border-radius: 4px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.follow-button {
+	right: 10px;
+	bottom: 10px;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	img {
+		-webkit-filter: invert(70%); 
+	}
+}
