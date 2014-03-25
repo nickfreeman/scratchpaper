@@ -69,6 +69,7 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
+      #params.fetch(:blurb, {}).permit(:description)
       params.require(:blurb).permit(:description)
     end
 end
