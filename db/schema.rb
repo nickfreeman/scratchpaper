@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310095521) do
+ActiveRecord::Schema.define(version: 20140325075044) do
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140310095521) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.string   "blurb"
   end
 
   create_table "roles", force: true do |t|
