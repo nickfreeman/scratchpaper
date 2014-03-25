@@ -16,6 +16,16 @@
     </div>
   </div>
 
+  <div class="container" id="newIdea">
+    <div class="row">
+      <div class="col-md-12">
+          <%= simple_form_for Idea.new, :url => { :action => "create" }, :defaults => { :wrapper_html => {:class => 'input-group input-group-lg'}, :input_html => { :class => 'form-control' } } do |f| %>
+            <%= f.input :description, label: false, placeholder: "What's your latest idea?" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 
