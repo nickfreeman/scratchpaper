@@ -8,7 +8,7 @@
   <div class="container" id="newIdea">
     <div class="row">
       <div class="col-md-12">
-          <%= form_for Idea.new, :url => { :action => "create" } do |f| %>
+          <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="idea-countdown">140</span>
               <%= f.text_field :blurb, :class => "form-control", :placeholder => "What's your latest idea?", :maxlength => 140 %>
@@ -20,7 +20,7 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href="#">Attach a photo</a></li>
+                  <li><a class="btn-default btn-file">Attach a photo<%= f.file_field :photo %></a></li>
                   <li><a href="#">Add a full description</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
