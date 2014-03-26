@@ -31,18 +31,22 @@
 
 .item.summary {
     float: top;
-    width: 220px;
-    max-width: 220px;
+    min-width: 220px;
     min-height: 400px;
 }
 
 .item.description {
     float: left;
-    min-width: 700px;
+    min-width: 460px;
     min-height: 400px;
 }
 
 .item.comments {
-    min-width: 700px;
+    min-width: 460px;
     min-height: 200px;
+}
+
+.item.progress {
+    min-width: 220px;
+    min-height: 640px;
 }
