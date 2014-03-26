@@ -16,6 +16,8 @@ gem 'acts_as_votable'
 gem 'acts_as_follower'
 gem 'bootstrap-sass'
 gem "masonry-rails", "~> 0.2.1"
+gem "paperclip"
+gem 'aws-sdk'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
