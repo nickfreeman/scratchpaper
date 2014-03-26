@@ -10,8 +10,8 @@
       <div class="col-md-12">
           <%= form_for Idea.new, :url => { :action => "create" } do |f| %>
             <div class="input-group input-group-lg">
-              <span class="input-group-addon">140</span>
-              <%= f.text_field :blurb, :class => "form-control", :placeholder => "What's your latest idea?" %>
+              <span class="input-group-addon" id="idea-countdown">140</span>
+              <%= f.text_field :blurb, :class => "form-control", :placeholder => "What's your latest idea?", :maxlength => 140 %>
               <div class="input-group-btn">
                 <!-- Button and dropdown menu -->
                 <%= f.submit "Post", :class => "btn btn-default", :tabindex => "-1" %>
