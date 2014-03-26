@@ -4,7 +4,6 @@
   margin-bottom: 20px;
   border-radius: 5px;
   position: relative;
-  float: left;
   clear: both;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
@@ -12,7 +11,6 @@
 }
 
 .item {
-    min-width: 100%;
     margin: 10px;
     float: top;
     background: white;
@@ -24,43 +22,27 @@
 }
 
 .item.picture {
+    float: left;
+    position: absolute;
     padding: 10px;
+    width: 220px;
+    height: 220px;
 }
 
 .item.summary {
     float: top;
+    width: 220px;
+    max-width: 220px;
     min-height: 400px;
 }
 
 .item.description {
     float: left;
+    min-width: 700px;
     min-height: 400px;
 }
 
 .item.comments {
+    min-width: 700px;
     min-height: 200px;
-}
-
-.container {
-    max-width: 100%;
-}
-
-.container.col1 {
-    float: left;
-    max-width: 200px;
-    margin: 10px;
-}
-
-.container.col2 {
-    float: left;
-    max-width: 700px;
-    min-height: 400px;
-    margin-left: 30px;
-    margin-top: 10px;
-}
-
-.container.col3 {
-    float: left;
-    max-width: 200px;
-    min-height: 400px;
 }

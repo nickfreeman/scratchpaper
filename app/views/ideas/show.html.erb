@@ -5,29 +5,23 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-    <div class="container col1">
-        <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-            <div class="item picture">
-                <img class="img-container" src="/assets/img4.jpg">
-            </div>
-            <div class="item summary">
-                <p> Short Description </p>
-                <%= @idea.description %>
-            </div>
+    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+        <div class="item picture">
+            <img class="img-container" src="/assets/img4.jpg">
         </div>
-    </div>
 
-    <div class="container col2">
-        <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-            <div class="item description">
-                <p> Long Description </p>
-                <%= @idea.description %>
-            </div>
+        <div class="item description">
+            <p> Long Description </p>
+            <%= @idea.description %>
+        </div>
 
-            <div class="item comments">
-                <p> Comments </p>
-            </div>
+        <div class="item summary">
+            <p> Short Description </p>
+            <%= @idea.description %>
+        </div>
 
+        <div class="item comments">
+            <p> Comments </p>
         </div>
     </div>
 </div>
