@@ -1,0 +1,66 @@
+#masonry-container {
+  background: #eee;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.item {
+    min-width: 100%;
+    margin: 10px;
+    float: top;
+    background: white;
+    color: #333;
+    padding: 15px;
+    font-size: 20px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.item.picture {
+    padding: 10px;
+}
+
+.item.summary {
+    float: top;
+    min-height: 400px;
+}
+
+.item.description {
+    float: left;
+    min-height: 400px;
+}
+
+.item.comments {
+    min-height: 200px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.container.col1 {
+    float: left;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.container.col2 {
+    float: left;
+    max-width: 700px;
+    min-height: 400px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.container.col3 {
+    float: left;
+    max-width: 200px;
+    min-height: 400px;
+}

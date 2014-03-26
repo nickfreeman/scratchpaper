@@ -1,4 +1,40 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/idea.css.scss" />
+</head>
+
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<div class="container">
+    <div class="container col1">
+        <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+            <div class="item picture">
+                <img class="img-container" src="/assets/img4.jpg">
+            </div>
+            <div class="item summary">
+                <p> Short Description </p>
+                <%= @idea.description %>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col2">
+        <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+            <div class="item description">
+                <p> Long Description </p>
+                <%= @idea.description %>
+            </div>
+
+            <div class="item comments">
+                <p> Comments </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <%= link_to 'Edit', edit_idea_path(@idea) %> |
+    <%= link_to 'Back', ideas_path %>
+</div>
+
+

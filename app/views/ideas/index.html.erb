@@ -1,21 +1,18 @@
-
 <head> 
-  <link rel="stylesheet" type="text/css" href="/assets/ideas.css.scss" />
-</head>
+    <link rel="stylesheet" type="text/css" href="/assets/ideas.css.scss" />
 
+</head>
 
 <body> 
     <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-
         <% @ideas.each do |idea| %>
             <%= link_to (idea) do %>
                 <div class="item">
                     <p><%= idea.description %><p>
                 </div>
-          <% end %>
+        <% end %>
     <%end%>
-
 
     <div class="item" id="balls">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
@@ -31,7 +28,7 @@
       </div>
     </div>
 
-    <div class="item w2"> 
+    <div class="item w2">
       <img class="img-container" src="assets/img1.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="follow-button">
