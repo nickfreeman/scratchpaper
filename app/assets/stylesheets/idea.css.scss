@@ -1,0 +1,51 @@
+#masonry-container {
+  background: #eee;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: relative;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.item {
+    margin: 10px;
+    float: top;
+    background: white;
+    color: #333;
+    padding: 15px;
+    font-size: 20px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.item.picture {
+    float: left;
+    padding: 10px;
+    min-width: 220px;
+    min-height: 220px;
+}
+
+.item.summary {
+    float: top;
+    min-width: 220px;
+    min-height: 400px;
+}
+
+.item.description {
+    float: left;
+    min-width: 460px;
+    min-height: 400px;
+}
+
+.item.comments {
+    min-width: 460px;
+    min-height: 200px;
+}
+
+.item.progress {
+    min-width: 220px;
+    min-height: 640px;
+}

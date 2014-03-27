@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="/assets/framework_and_overrides.css.scss" />
+    <link rel="stylesheet" type="text/css" href="/assets/home.css.scss" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Idealy" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Idealy" %>">
@@ -12,7 +15,7 @@
     <header>
        <%= render 'layouts/navigation' %>
     </header>
-    
+
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>

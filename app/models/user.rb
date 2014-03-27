@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_follower
   acts_as_voter
+
+  has_many :ideas, dependent: :destroy
 end

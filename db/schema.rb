@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326064951) do
+ActiveRecord::Schema.define(version: 20140326225955) do
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140326064951) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "roles", force: true do |t|
