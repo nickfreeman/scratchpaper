@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy, :like, :follow]
+  before_filter :authenticate_user!
 
   # GET /ideas
   # GET /ideas.json
@@ -59,6 +60,16 @@ class IdeasController < ApplicationController
       format.html { redirect_to ideas_url }
       format.json { head :no_content }
     end
+  end
+
+  def like
+    @idea.vote :voter => current_user
+    redirect_to ideas_path
+  end
+
+  def follow
+    current_user.follow(@idea)
+    redirect_to ideas_path
   end
 
   private
