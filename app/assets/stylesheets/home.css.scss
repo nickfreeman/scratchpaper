@@ -79,13 +79,74 @@ body {
 	margin-left: 10px;
 }
 
-.follow-button {
+.item-buttons {
 	right: 10px;
 	bottom: 10px;
 	position: absolute;
+	width: 80px;
+	height: 15px;
+	opacity: 0.7;	
+}
+
+.follow-button {
+	float: right;
 	width: 15px;
 	height: 15px;
-	img {
-		-webkit-filter: invert(70%);
-	}
+	margin-top: 0px;
+	bottom: 0px;
+	opacity: 0.7;
+}
+
+.follow-button:hover {
+	opacity: 1;
+}
+
+.follow-count {
+	font-size: 13px;
+	float: right;
+	margin: 0px;
+	bottom: 0px;
+	margin-left: 5px;
+}
+
+.like-button {
+	float: right;
+	width: 12px;
+	height: 12px;
+	margin-top: 2px;
+	margin-left: 2px;
+	bottom: 0px;
+	opacity: 0.7;
+}
+
+.like-button:hover {
+	opacity: 1;
+}
+
+.like-count {
+	font-size: 13px;
+	float: right;
+	margin: 0px;
+	bottom: 0px;
+	margin-left: 3px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }

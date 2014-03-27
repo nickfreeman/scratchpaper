@@ -3,157 +3,382 @@
 
 </head>
 
-<body> 
-    <div id="wrapper">
+<body>
+  <div class="container" id="newIdea">
+    <div class="row">
+      <div class="col-md-12">
+          <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="idea-countdown">140</span>
+              <%= f.text_field :blurb, :class => "form-control", :placeholder => "What's your latest idea?", :maxlength => 140 %>
+              <div class="input-group-btn">
+                <!-- Button and dropdown menu -->
+                <%= f.submit "Post", :class => "btn btn-default", :tabindex => "-1" %>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a class="btn-default btn-file">Attach a photo<%= f.file_field :photo %></a></li>
+                  <li><a href="#">Add a full description</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
         <% @ideas.each do |idea| %>
             <%= link_to (idea) do %>
                 <div class="item">
-                    <p><%= idea.description %><p>
+                    <p><%= idea.blurb %><p>
+                    <div class="item-buttons">
+                      <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+                        <!-- fallback image -->
+                        <img src="assets/icon_18944.png" />
+                      </object>
+                      <div class="follow-count">7</div>
+                      <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+                        <!-- fallback image *pick something else-->
+                        <img src="assets/icon_19367.png" />
+                      </object>
+                      <div class="like-count">24</div>                      
+                    </div>
                 </div>
         <% end %>
     <%end%>
 
-    <div class="item" id="balls">
+    <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>                      
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>                      
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img1.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>                      
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img11.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>                      
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
+
     <div class="item w2">
       <img class="img-container" src="assets/img3.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img4.jpg">
       <p  class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img5.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img9.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>      
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img class="img-container" src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>    
 
     <div class="item w2">
       <img class="img-container" src="assets/img6.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
-    <div class="item">sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div class="item">
+      <p>sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
+      </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img7.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>    
     
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
@@ -162,75 +387,167 @@
     <div class="item w2">
       <img class="img-container" src="assets/img1.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img9.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>    
 
     <div class="item w2">
       <img class="img-container" src="assets/img10.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img11.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-
-    <div class="item">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
+      </div>
+    </div>
+
+    <div class="item">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item w2">
       <img class="img-container" src="assets/img1.jpg">
       <p class="pw2">dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
-      <div class="follow-button">
-        <img src="assets/star.png">
+      <div class="item-buttons">
+        <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
+          <!-- fallback image -->
+          <img src="assets/icon_18944.png" />
+        </object>
+        <div class="follow-count">7</div>
+        <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
+          <!-- fallback image *pick something else-->
+          <img src="assets/icon_19367.png" />
+        </object>
+        <div class="like-count">24</div>    
       </div>
     </div>
-
   </div>
 </div>
 
