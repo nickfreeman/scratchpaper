@@ -35,7 +35,7 @@ $(function(){
               if (containerWidth > 480) {
               	return 240;
               } else {
-              	var colWidth = containerWidth / 2;
+              	var colWidth = containerWidth * 0.5;
               	return colWidth;
               }
             },
@@ -57,6 +57,11 @@ function adjustItems(width) {
 		    var e = elements[i];
 		    e.style.width=width*.45 + "px";
 		    e.style.height=width*.45 + "px";
+		    // e.style.marginLeft=width*0.05 + "px";
+		    // e.style.marginRight=width*0.05 + "px";
+		    // e.style.marginBottom = 0;
+		    // e.style.marginRight = 0;
+		    e.style.margin=width*0.025 + "px";
 		}
 		for (var i = 0; i < n2; i++) {
 		    var e2 = elements2[i];
@@ -78,6 +83,7 @@ function adjustItems(width) {
 		    var e = elements[i];
 		    e.style.width=220 + "px";
 		    e.style.height=220 + "px";
+		    e.style.margin=10 + "px";
 		}
 		for (var i = 0; i < n2; i++) {
 		    var e2 = elements2[i];

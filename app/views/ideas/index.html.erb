@@ -34,6 +34,7 @@
 
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+        <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
         <% @ideas.each do |idea| %>
             <!-- this stops me from putting links inside the div <%= link_to (idea) do %> -->
                 <div class="item">
