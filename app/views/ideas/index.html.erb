@@ -36,39 +36,36 @@
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
         <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
         <% @ideas.each do |idea| %>
-            <!-- this stops me from putting links inside the div <%= link_to (idea) do %> -->
-                <div class="item">
-                    <p><%= idea.blurb %><p>
-                    <div class="item-buttons">
-                      <!-- <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
-                        
-                        <img src="assets/icon_18944.png" />
-                      </object> -->
-                      <%= link_to follow_path(idea) , :remote => true, :id => idea.id do %>
-                        <div class="follow-button" >
-                          <%= image_tag "icon_18944.png" %>
-                        </div>
-                      <% end %>
-                      <div class="follow-count">
-                        <%= idea.followers_count %>
-                      </div>
+          <% if idea.photo.exists? %>
+            <% photoExists = true %>
+            <div class="item w2">
+          <% else %>
+            <div class="item">
+          <% end %>
+              <% if photoExists %>
+              <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>
+              <% end %>
+              <p><%= idea.blurb %><p>
+              <div class="item-buttons">
 
-                      <!-- <object class="like-button" data="assets/icon_19367.svg" type="image/svg+xml">
-                         fallback image *pick something else
-                        <img src="assets/icon_19367.png" />
-                      </object> -->
-                      <%= link_to like_path(idea) , :remote => true, :id => idea.id do %>
-                        <div class="like-button">
-                          <%= image_tag "icon_19367.png" %>
-                        </div>
-                      <% end %>
-                      <div class="like-count">
-                        <%= idea.votes.size %>
-                      </div>                      
-                    </div>
+                <%= link_to follow_path(idea), :remote => true, :id => idea.id do %>
+                  <div class="follow-button" >
+                    <%= image_tag "icon_18944.png" %>
+                  </div>
+                <% end %>
+                <div class="follow-count">
+                  <%= idea.followers_count %>
                 </div>
-          <!-- <% end %> -->
-    <%end%>
+
+                <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id do %>
+                    <%= image_tag "icon_19367.png" %>
+                <% end %>
+                <div class="like-count">
+                  <%= likeCount = idea.votes.size %>
+                </div>                      
+              </div>
+            </div>
+        <%end%>
 
     <div class="item">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<p>
