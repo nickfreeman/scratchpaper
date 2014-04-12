@@ -1,51 +1,61 @@
-#masonry-container {
-  background: #eee;
-  padding: 5px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  position: relative;
-  clear: both;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+#mainContainer {
+  height: 2000px;
+  width: 800px;
+  margin: auto;
+}
+
+#sideBarColumn {
+  width: 30%;
+  height: 100%;
+  float: left;
+  padding-right: 20px;
+}
+
+#contentColumn {
+  width: 70%;
+  height: 100%;
+  float: right;
 }
 
 .item {
     margin: 10px;
-    float: top;
     background: white;
     color: #333;
     padding: 15px;
     font-size: 20px;
-    position: relative;
     border-radius: 4px;
-}
-
-.item.picture {
     float: left;
-    padding: 10px;
-    min-width: 220px;
-    min-height: 220px;
+    position: relative;
 }
 
-.item.summary {
-    float: top;
-    min-width: 220px;
-    min-height: 400px;
+.item.coverPhoto {
+    padding: 10px;
+    width: 220px;
+    height: 220px;
+    background: white;
+}
+
+.item.poster {
+    width: 220px;
+    height: 300px;
 }
 
 .item.description {
-    float: left;
-    min-width: 460px;
-    min-height: 400px;
+    width: 540px;
+    height: 60px;
+}
+
+.item.fullDescription {
+    width: 540px;
+    height: 200px;
+}
+
+.item.media {
+    width: 540px;
+    height: 450px;
 }
 
 .item.comments {
-    min-width: 460px;
-    min-height: 200px;
-}
-
-.item.progress {
-    min-width: 220px;
-    min-height: 640px;
+  width: 540px;
+  height: 500px;
 }

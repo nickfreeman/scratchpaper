@@ -4,35 +4,31 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-        <div class="item picture">
-            <img class="img-container" src="/assets/img4.jpg">
+<div id="mainContainer">
+    <div id="sideBarColumn">
+        <div class="item coverPhoto">
+            <% if @idea.photo.exists? %>
+              <%= image_tag(@idea.photo.url(:medium), :class => "img-container")%>
+            <% end %>
         </div>
-
+        <div class="item poster">
+        </div>
+    </div>
+    <div id="contentColumn">
         <div class="item description">
-            <p> Long Description </p>
-            <%= @idea.description %>
+            <%= @idea.blurb %>
         </div>
-
-        <div class="item progress">
-            <p> Progress tree </p>
+        <div class="item fullDescription">
         </div>
-
-        <div class="item summary">
-            <p> Short Description </p>
-            <%= @idea.description %>
+        <div class="item media">
         </div>
-
         <div class="item comments">
-            <p> Comments </p>
         </div>
     </div>
 </div>
 
-<div class="container">
     <%= link_to 'Edit', edit_idea_path(@idea) %> |
     <%= link_to 'Back', ideas_path %>
-</div>
+
 
 
