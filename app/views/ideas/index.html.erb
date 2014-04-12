@@ -4,7 +4,7 @@
 </head>
 
 <body>
-  <div class="container" id="newIdea">
+  <div id="newIdea">
     <div class="row">
       <div class="col-md-12">
           <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
@@ -21,9 +21,9 @@
                 <ul class="dropdown-menu pull-right">
                   <li><a class="btn-default btn-file">Attach a photo<%= f.file_field :photo %></a></li>
                   <li><a href="#">Add a full description</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <!--<li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">Separated link</a></li> -->
                 </ul>
               </div>
             </div>
@@ -39,6 +39,7 @@
             <!-- this stops me from putting links inside the div <%= link_to (idea) do %> -->
                 <div class="item">
                     <p><%= idea.blurb %><p>
+                    <%= image_tag idea.photo.url(:thumb) %>
                     <div class="item-buttons">
                       <!-- <object class="follow-button" data="assets/icon_18944.svg" type="image/svg+xml">
                         
