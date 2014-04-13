@@ -59,7 +59,7 @@
 
 .section.media {
     width: 540px;
-    height: 350px;
+    height: 100%;
 }
 
 .section.comments {
@@ -92,10 +92,25 @@ hr {
 
 .contributorImg img {
     border-radius: 2px;
-  }
+}
 
 .contributorContent {
   width: 130px;
   height: 50px;
   float: left;
+}
+
+.slides {
+    padding: 0px;
+}
+
+.slides li {
+    margin-right: 15px;
+}
+
+.flexslider{
+    background:none;
+    border:none;
+    box-shadow:none;
+    margin:0px;
 }

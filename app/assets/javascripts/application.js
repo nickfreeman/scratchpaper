@@ -18,3 +18,4 @@
 //= require masonry/jquery.event-drag
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
+//= require jquery.flexslider

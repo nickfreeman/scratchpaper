@@ -92,6 +92,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    flexslider (2.2.0)
+      sass-rails (>= 3.1.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     hike (1.2.3)
@@ -225,6 +227,7 @@ DEPENDENCIES
   database_cleaner (= 1.0.1)
   devise
   email_spec
+  flexslider
   hub
   jbuilder (~> 1.2)
   jquery-rails

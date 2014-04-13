@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem "masonry-rails", "~> 0.2.1"
 gem "paperclip"
 gem 'aws-sdk'
+gem 'flexslider'
 gem 'will_paginate', '~> 3.0.5'
 gem 'betterlorem', '~> 0.1.2'
 gem 'bootstrap-will_paginate', '~> 0.0.10'

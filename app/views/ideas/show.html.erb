@@ -54,7 +54,7 @@
         <div class="section description">
             <p class="question">
                 What is the problem?
-            </p>      
+            </p>
             <p class="answer">
                 <%= @idea.problem %>
             </p>
@@ -66,6 +66,15 @@
             </p>
         </div>
         <div class="section media">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li><%= image_tag(@idea.photo.url(:medium))%></li>
+                    <li><%= image_tag(@idea.photo.url(:medium))%></li>
+                    <li><%= image_tag(@idea.photo.url(:medium))%></li>
+                    <li><%= image_tag(@idea.photo.url(:medium))%></li>
+                    <li><%= image_tag(@idea.photo.url(:medium))%></li>
+                </ul>
+            </div>
         </div>
         <div class="section comments">
             <div id="disqus_wrapper">
@@ -86,6 +95,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 

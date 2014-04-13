@@ -33,12 +33,23 @@ $(function(){
   	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
   });
 
+  $(window).load(function(){
+     $('.flexslider').flexslider({
+         animation: "slide",
+         animationLoop: true,
+         itemWidth: 210,
+         itemMargin: 20,
+         mousewheel: false,
+         controlNav:false,
+     });
+   });
+
 });
 
 function adjustItems(width) {
 	width = parseInt(width);
 	var elements = getElementsByClassName(document, "item"), n = elements.length;
-   	var elements2 = getElementsByClassName(document, "item w2"), n2 = elements2.length;   	
+   	var elements2 = getElementsByClassName(document, "item w2"), n2 = elements2.length;
    	var elements3 = getElementsByClassName(document, "img-container"), n3 = elements3.length;
    	var elements4 = getElementsByClassName(document, "pw2"), n4 = elements4.length;
 

@@ -1,4 +1,4 @@
-<head> 
+<head>
     <link rel="stylesheet" type="text/css" href="/assets/ideas.css.scss" />
 
 </head>
@@ -35,7 +35,7 @@
 
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-      
+
       <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
       <% @ideas.each do |idea| %>
         <% if idea.photo.exists? %>
@@ -64,7 +64,7 @@
               <% end %>
               <div class="like-count">
                 <%= idea.votes.size %>
-              </div>                      
+              </div>
             </div>
           </div>
       <%end%>
