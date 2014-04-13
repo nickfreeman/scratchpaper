@@ -35,7 +35,7 @@ img12 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img12.jpg'))
 
 imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
 
-50.times do |i|
+99.times do |i|
 	puts (i+1)
 	if (i+1) % 3 == 0
 		Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample)
