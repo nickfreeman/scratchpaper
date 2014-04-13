@@ -5,35 +5,35 @@ $(function(){
 	    adjustItems($(window).width());
 	});
 
-  var container = $('#masonry-container');
-
-  $('#masonry-container').masonry({
-    itemSelector : '.item',
-    columnWidth: function( containerWidth) {
-              if (containerWidth > 480) {
-              	return 240;
-              } else {
-              	var colWidth = containerWidth * 0.5;
-              	return colWidth;
-              }
-            },
-    isAnimated: true,
-    isFitWidth: true
-  });
-
-  $(".like-button").click(function(){
-  	var likeCount = this.parentNode.getElementsByClassName('like-count')[0].innerHTML;
-  	likeCount++;
-  	this.parentNode.getElementsByClassName('like-count')[0].innerHTML = likeCount;
-  });
-
-  $(".follow-button").click(function(){
-  	var followCount = this.parentNode.getElementsByClassName('follow-count')[0].innerHTML;
-  	followCount++;
-  	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
-  });
-
-  $(window).load(function(){
+    var container = $('#masonry-container');
+  
+    $('#masonry-container').masonry({
+      itemSelector : '.item',
+      columnWidth: function( containerWidth) {
+                if (containerWidth > 480) {
+                	return 240;
+                } else {
+                	var colWidth = containerWidth * 0.5;
+                	return colWidth;
+                }
+              },
+      isAnimated: true,
+      isFitWidth: true
+    });
+  
+    $(".like-button").click(function(){
+    	var likeCount = this.parentNode.getElementsByClassName('like-count')[0].innerHTML;
+    	likeCount++;
+    	this.parentNode.getElementsByClassName('like-count')[0].innerHTML = likeCount;
+    });
+  
+    $(".follow-button").click(function(){
+    	var followCount = this.parentNode.getElementsByClassName('follow-count')[0].innerHTML;
+    	followCount++;
+    	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
+    });
+  
+    $(window).load(function(){
      $('.flexslider').flexslider({
          animation: "slide",
          animationLoop: true,
@@ -42,8 +42,29 @@ $(function(){
          mousewheel: false,
          controlNav:false,
      });
-   });
-
+    });
+    // Infinite Scroll
+    $container.infinitescroll({
+      navSelector  : '#page-nav',    // selector for the paged navigation 
+      nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
+      itemSelector : '.box',     // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: 'No more pages to load.',
+          img: 'http://i.imgur.com/6RMhx.gif'
+        }
+      },
+      // trigger Masonry as a callback
+      function( newElements ) {
+        // hide new items while they are loading
+        var $newElems = $( newElements ).css({ opacity: 0 });
+        // ensure that images load before adding to masonry layout
+        $newElems.imagesLoaded(function(){
+          // show elems now they're ready
+          $newElems.animate({ opacity: 1 });
+          $container.masonry( 'appended', $newElems, true ); 
+        });
+      }
+    );
 });
 
 function adjustItems(width) {
