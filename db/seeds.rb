@@ -51,8 +51,9 @@ Idea.create(:blurb => "Mechanics that take pictures of their progress while work
 99.times do |i|
 	puts (i+1)
 	if (i+1) % 3 == 0
-		Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample)
+		Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample, 
+			:problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true))
 	else
-		Idea.create(:blurb => BetterLorem.c(100, true, true))
+		Idea.create(:blurb => BetterLorem.c(100, true, true), :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true))
 	end
 end

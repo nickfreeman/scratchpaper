@@ -1,5 +1,38 @@
-<h1>New idea</h1>
+<!-- <%= render 'form' %> -->
 
-<%= render 'form' %>
+<div id="contentColumn">
+    <div class="section blurb">
+        "<%= @idea.blurb %>"
+    </div>
+    <div class="section description">
+        <p class="question">
+            What is the problem?
+        </p>      
+        <p class="answer">
+            <%= @idea.problem %>
+        </p>
+        <p class="question">
+            How do you want to solve it?
+        </p>
+        <p class="answer">
+            <%= @idea.solution %>
+        </p>
+    </div>
+
+</div>
+
+<%= form_for @idea, url: {action: "create"} do |f| %>
+
+  <%= f.label "Short Description" %>
+  <%= f.text_field :blurb %>
+
+  <%= f.label "What is the problem?" %>
+  <%= f.text_area :problem %>
+
+  <%= f.label "How do you want to solve it?" %>
+  <%= f.text_area :solution %>
+
+  <%= f.submit "Done" %>
+<% end %>
 
 <%= link_to 'Back', ideas_path %>
