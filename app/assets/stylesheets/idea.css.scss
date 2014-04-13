@@ -15,7 +15,7 @@
   float: right;
 }
 
-.item {
+.section {
     margin: 10px;
     background: white;
     color: #333;
@@ -26,27 +26,27 @@
     position: relative;
 }
 
-.item.coverPhoto {
+.section.coverPhoto {
     width: 220px;
     height: 220px;
     background: white;
 }
 
-.item.coverPhoto.img {
+.section.coverPhoto.img {
   width: 220px;
 }
 
-.item.contributors {
+.section.contributors {
     width: 220px;
     height: 50%;
 }
 
-.item.blurb {
+.section.blurb {
     width: 540px;
     height: 100%;
 }
 
-.item.description {
+.section.description {
     width: 540px;
     height: 100%;
 }
@@ -56,12 +56,12 @@
   font-weight: 500;
 }
 
-.item.media {
+.section.media {
     width: 540px;
     height: 350px;
 }
 
-.item.comments {
+.section.comments {
   width: 540px;
   height: 100%;
 }

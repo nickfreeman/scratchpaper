@@ -7,11 +7,11 @@
 <div id="mainContainer">
     <div id="sideBarColumn">
         <% if @idea.photo.exists? %>
-            <div class="item coverPhoto">
+            <div class="section coverPhoto">
                   <%= image_tag(@idea.photo.url(:medium), :class => "img-container")%>
             </div>
         <% end %>
-        <div class="item contributors">
+        <div class="section contributors">
             <div class="contributor">
                 <div class="contributorImg">
                   <%= image_tag("asaf.jpg") %>
@@ -48,10 +48,10 @@
         </div>
     </div>
     <div id="contentColumn">
-        <div class="item blurb">
+        <div class="section blurb">
             "<%= @idea.blurb %>"
         </div>
-        <div class="item description">
+        <div class="section description">
             <p class="question">
                 What is the problem?
             </p>      
@@ -65,9 +65,9 @@
                 But the plugged-in are often the sort that make purchasing decisions regarding the implementation of new technology for large corporations. Could the Rice pickup harm Dropbox there?
             </p>
         </div>
-        <div class="item media">
+        <div class="section media">
         </div>
-        <div class="item comments">
+        <div class="section comments">
             <div id="disqus_wrapper">
               <div id="disqus_thread"></div>
               <script type="text/javascript">
@@ -89,4 +89,4 @@
 </div>
 
 
-
+<%= link_to 'alksdjf', ideas_path() %>
