@@ -8,7 +8,7 @@
     <div id="sideBarColumn">
         <% if @idea.photo.exists? %>
             <div class="section coverPhoto">
-                  <%= image_tag(@idea.photo.url(:medium), :class => "img-container")%>
+                  <%= image_tag(@idea.photo.url(:medium))%>
             </div>
         <% end %>
         <div class="section contributors">
@@ -56,13 +56,13 @@
                 What is the problem?
             </p>      
             <p class="answer">
-                 inside the technology community were angered by the choice. Dropbox, a company that was listed as “coming soon” on the first PRISM slides, has joined with other technology companies in calling for reformation of surveillance.
+                <%= @idea.problem %>
             </p>
             <p class="question">
                 How do you want to solve it?
             </p>
             <p class="answer">
-                But the plugged-in are often the sort that make purchasing decisions regarding the implementation of new technology for large corporations. Could the Rice pickup harm Dropbox there?
+                <%= @idea.solution %>
             </p>
         </div>
         <div class="section media">

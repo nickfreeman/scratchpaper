@@ -35,13 +35,16 @@
 
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+      
       <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
       <% @ideas.each do |idea| %>
         <% if idea.photo.exists? %>
           <% photoExists = true %>
           <div class="item w2">
+            <%= link_to idea, :class => "ideaLink w2" do %><%end%>
         <% else %>
           <div class="item">
+            <%= link_to idea, :class => "ideaLink" do %><%end%>
         <% end %>
             <% if photoExists %>
             <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>

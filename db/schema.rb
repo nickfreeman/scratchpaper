@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413000524) do
+ActiveRecord::Schema.define(version: 20140413070201) do
 
   create_table "attachments", force: true do |t|
     t.integer  "idea_id"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140413000524) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "user_id"
+    t.text     "problem"
+    t.text     "solution"
   end
 
   create_table "roles", force: true do |t|
