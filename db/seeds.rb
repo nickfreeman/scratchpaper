@@ -19,7 +19,7 @@
 I18n.enforce_available_locales = false
 
 # Create a test user
-User.create(:name => 'user 1', :email => 'test@test.com', :password => 'testtest')
+User.create(:name => 'user 1', :email => 'test@test.com', :password => 'qwerasdf')
 
 # load images
 img1 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img1.jpg'))
@@ -34,6 +34,19 @@ img11 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img11.jpg'))
 img12 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img12.jpg'))
 
 imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
+
+Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed using a virtual person", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')))
+Idea.create(:blurb => "GPS with routes that maximize MPG", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'audi.jpg')))
+Idea.create(:blurb => "A Browser Extension That Lets You Choose What You Censor")
+Idea.create(:blurb => "Fundraising website that lets common people tell politicians if you vote for X we will donate $ to whoever runs against you")
+Idea.create(:blurb => "Jukebox app for bars", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'jukebox.jpg')))
+Idea.create(:blurb => "A resume that illustrates your present ability rather than your employment history")
+Idea.create(:blurb => "A microwave with a built-in whisk/stirrer so you don't have to remove your food every two minutes and stir it")
+Idea.create(:blurb => "Wind turbines along highways and interstates", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'turbine.jpg')))
+Idea.create(:blurb => "A website that tells you if you will need the assigned textbook for that class/professor")
+Idea.create(:blurb => "Website where you type in a word in your language, and see if it could be construed as offensive in any other language")
+Idea.create(:blurb => "Mechanics that take pictures of their progress while working on your car", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'mechanic.jpg')))
+
 
 99.times do |i|
 	puts (i+1)
