@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326225955) do
+ActiveRecord::Schema.define(version: 20140413000524) do
+
+  create_table "attachments", force: true do |t|
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attach_file_name"
+    t.string   "attach_content_type"
+    t.integer  "attach_file_size"
+    t.datetime "attach_updated_at"
+  end
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
