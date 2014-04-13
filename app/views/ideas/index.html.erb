@@ -49,10 +49,8 @@
               <p><%= idea.blurb %><p>
               <div class="item-buttons">
 
-                <%= link_to follow_path(idea), :remote => true, :id => idea.id do %>
-                  <div class="follow-button" >
-                    <%= image_tag "icon_18944.png" %>
-                  </div>
+                <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id do %>
+                  <%= image_tag "icon_18944.png" %>
                 <% end %>
                 <div class="follow-count">
                   <%= idea.followers_count %>
@@ -62,7 +60,7 @@
                     <%= image_tag "icon_19367.png" %>
                 <% end %>
                 <div class="like-count">
-                  <%= likeCount = idea.votes.size %>
+                  <%= idea.votes.size %>
                 </div>                      
               </div>
             </div>

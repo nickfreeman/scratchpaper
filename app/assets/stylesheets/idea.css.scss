@@ -1,5 +1,4 @@
 #mainContainer {
-  height: 2000px;
   width: 800px;
   margin: auto;
 }
@@ -8,7 +7,6 @@
   width: 30%;
   height: 100%;
   float: left;
-  padding-right: 20px;
 }
 
 #contentColumn {
@@ -22,44 +20,81 @@
     background: white;
     color: #333;
     padding: 15px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 4px;
     float: left;
     position: relative;
 }
 
 .item.coverPhoto {
-    padding: 10px;
     width: 220px;
     height: 220px;
     background: white;
 }
 
-.item.poster {
+.item.coverPhoto.img {
+  width: 220px;
+}
+
+.item.contributors {
     width: 220px;
-    height: 300px;
+    height: 50%;
+}
+
+.item.blurb {
+    width: 540px;
+    height: 100%;
 }
 
 .item.description {
     width: 540px;
-    height: 60px;
+    height: 100%;
 }
 
-.item.fullDescription {
-    width: 540px;
-    height: 200px;
+.question {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .item.media {
     width: 540px;
-    height: 450px;
+    height: 350px;
 }
 
 .item.comments {
   width: 540px;
+  height: 100%;
 }
 
 #disqus_wrapper {
-  margin: 50px;
   max-width: 1200px;
+}
+
+.contributor {
+  width: 190px;
+  height: 50px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.contributorImg {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.contributorImg img {
+    border-radius: 2px;
+  }
+
+.contributorContent {
+  width: 130px;
+  height: 50px;
+  float: left;
 }

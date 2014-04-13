@@ -6,19 +6,64 @@
 
 <div id="mainContainer">
     <div id="sideBarColumn">
-        <div class="item coverPhoto">
-            <% if @idea.photo.exists? %>
-              <%= image_tag(@idea.photo.url(:medium), :class => "img-container")%>
-            <% end %>
-        </div>
-        <div class="item poster">
+        <% if @idea.photo.exists? %>
+            <div class="item coverPhoto">
+                  <%= image_tag(@idea.photo.url(:medium), :class => "img-container")%>
+            </div>
+        <% end %>
+        <div class="item contributors">
+            <div class="contributor">
+                <div class="contributorImg">
+                  <%= image_tag("asaf.jpg") %>
+                </div>
+                <div class="contributorContent">
+                    <p>Asaf Avidan Antonir</p>
+                </div>
+            </div>
+            <hr>
+            <div class="contributor">
+                    <div class="contributorImg">
+                      <%= image_tag("img7.jpg") %>
+                    </div>
+                    <div class="contributorContent">
+                        <p>Nick Freeman</p>
+                    </div>
+                </div>
+                 <div class="contributor">
+                    <div class="contributorImg">
+                      <%= image_tag("img3.jpg") %>
+                    </div>
+                    <div class="contributorContent">
+                        <p>James Sha</p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <div class="contributorImg">
+                      <%= image_tag("img1.jpg") %>
+                    </div>
+                    <div class="contributorContent">
+                        <p>Jackie Chan</p>
+                    </div>
+                </div>
         </div>
     </div>
     <div id="contentColumn">
-        <div class="item description">
-            <%= @idea.blurb %>
+        <div class="item blurb">
+            "<%= @idea.blurb %>"
         </div>
-        <div class="item fullDescription">
+        <div class="item description">
+            <p class="question">
+                What is the problem?
+            </p>      
+            <p class="answer">
+                 inside the technology community were angered by the choice. Dropbox, a company that was listed as “coming soon” on the first PRISM slides, has joined with other technology companies in calling for reformation of surveillance.
+            </p>
+            <p class="question">
+                How do you want to solve it?
+            </p>
+            <p class="answer">
+                But the plugged-in are often the sort that make purchasing decisions regarding the implementation of new technology for large corporations. Could the Rice pickup harm Dropbox there?
+            </p>
         </div>
         <div class="item media">
         </div>
@@ -42,9 +87,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 

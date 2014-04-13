@@ -25,7 +25,12 @@ $(function(){
   	var likeCount = this.parentNode.getElementsByClassName('like-count')[0].innerHTML;
   	likeCount++;
   	this.parentNode.getElementsByClassName('like-count')[0].innerHTML = likeCount;
-  	console.log(likeCount);
+  });
+
+  $(".follow-button").click(function(){
+  	var followCount = this.parentNode.getElementsByClassName('follow-count')[0].innerHTML;
+  	followCount++;
+  	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
   });
 
 });

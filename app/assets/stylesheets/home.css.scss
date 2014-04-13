@@ -33,6 +33,8 @@ body {
 }
 
 .item {
+	word-wrap: break-word;
+	overflow: hidden;
     width: 220px;
     height: 220px;
     margin: 10px;
@@ -52,7 +54,7 @@ body {
 
 @media screen and (max-width: 480px) {
 	.item {
-		font-size: 17px;
+		font-size: 14px;
 	}
 }
 
@@ -63,6 +65,7 @@ body {
 }
 
 .item.w2 p {
+	overflow: hidden;
 	float: left;
 	width: 220px;
 	height: 220px;
