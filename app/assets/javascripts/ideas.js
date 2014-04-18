@@ -72,6 +72,9 @@ function adjustItems(width) {
    	var elements2 = getElementsByClassName(document, "item w2"), n2 = elements2.length;
    	var elements3 = getElementsByClassName(document, "img-container"), n3 = elements3.length;
    	var elements4 = getElementsByClassName(document, "pw2"), n4 = elements4.length;
+    var elements5 = getElementsByClassName(document, "ideaLink"), n5 = elements5.length;
+    var elements6 = getElementsByClassName(document, "ideaLink w2"), n6 = elements6.length;
+
 
 	if (width < 480) {
    		for (var i = 0; i < n; i++) {
@@ -99,8 +102,18 @@ function adjustItems(width) {
 		    e4.style.width=width*.40 + "px";
 		    e4.style.height=width*.40 + "px";
 		}
-    } else {
-    	for (var i = 0; i < n; i++) {
+    for (var i = 0; i < n5; i++) {
+        var e5 = elements5[i];
+        e5.style.width=width*.40 + "px";
+        e5.style.height=width*.33 + "px";
+    }
+    for (var i = 0; i < n6; i++) {
+        var e6 = elements6[i];
+        e6.style.width=width*.90 + "px";
+        e6.style.height=width*.33 + "px";
+    }
+  } else {
+    for (var i = 0; i < n; i++) {
 		    var e = elements[i];
 		    e.style.width=220 + "px";
 		    e.style.height=220 + "px";
@@ -121,6 +134,16 @@ function adjustItems(width) {
 		    e4.style.width=220 + "px";
 		    e4.style.height=220 + "px";
 		}
+    for (var i = 0; i < n5; i++) {
+        var e5 = elements5[i];
+        e5.style.width=190 + "px";
+        e5.style.height=170 + "px";
+    }
+    for (var i = 0; i < n6; i++) {
+        var e6 = elements6[i];
+        e6.style.width=430 + "px";
+        e6.style.height=170 + "px";
+    }
     	$("stylesheet").attr("href", "/assets/home.css.scss");
     }
 }

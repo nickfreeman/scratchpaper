@@ -49,7 +49,13 @@
             <% if photoExists %>
               <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>
             <% end %>
-            <p><%= idea.blurb %><p>
+            <% if photoExists %>
+              <p class="pw2">
+            <% else %>
+              <p>
+            <% end %>
+              <%= idea.blurb %>
+            <p>
             <div class="item-buttons">
 
               <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id do %>
