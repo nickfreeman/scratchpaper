@@ -1,4 +1,4 @@
-ScratchPaper::Application.routes.draw do
+Idealy::Application.routes.draw do
   resources :ideas
 
   root :to => "home#index"
