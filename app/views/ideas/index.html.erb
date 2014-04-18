@@ -11,7 +11,7 @@
           <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="idea-countdown">140</span>
-              <%= f.text_field :blurb, :class => "form-control", :id => "new-idea-text-field", :placeholder => "What's your latest idea?", :maxlength => 140 %>
+              <%= f.text_field :blurb, :class => "form-control",  :placeholder => "What's your latest idea?", :maxlength => 140 %>
               <div class="input-group-btn">
                 <!-- Button and dropdown menu -->
                 <%= f.submit "post", :class => "btn btn-default", :id => "new-idea-post-button", :tabindex => "-1" %>
