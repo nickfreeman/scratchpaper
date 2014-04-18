@@ -134,15 +134,6 @@ hr {
   #contentColumn {
     width: 100%;
   }
-
-
-}
-
-@media screen and (max-width: 400px) {
-  .body {
-    font-size: 16px;
-  }
-
   #mainContainer {
   width: 100%;
   margin: auto;
@@ -248,15 +239,12 @@ hr {
   font-size: 10px;
 }
 
-@media screen and (max-width: 480px) {
-  #sideBarColumn {
-    width: 100%;
-  }
-  #contentColumn {
-    width: 100%;
-  }
-
-
 
 }
+
+@media screen and (max-width: 400px) {
+  .body {
+    font-size: 16px;
+  }
 }
+

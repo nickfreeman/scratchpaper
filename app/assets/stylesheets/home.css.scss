@@ -11,7 +11,6 @@ main {
 
 body {
 	padding-top: 50px;
-	font-size: 20px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 }
@@ -74,7 +73,7 @@ body {
 
 @media screen and (max-width: 400px) {
 	.body {
-		font-size: 16px;
+		font-size: 12px;
 	}
 }
 
@@ -120,6 +119,7 @@ body {
 
 .follow-count {
 	font-size: 13px;
+	font-weight: bold;
 	float: right;
 	margin: 0px;
 	bottom: 0px;
@@ -142,6 +142,7 @@ body {
 
 .like-count {
 	font-size: 13px;
+	font-weight: bold;
 	float: right;
 	margin: 0px;
 	bottom: 0px;
@@ -168,7 +169,4 @@ body {
     display: block;
 }
 
-#idea-countdown {
-	background-color: white;
-}
 
