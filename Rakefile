@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Idealy::Application.load_tasks
+ScratchPaper::Application.load_tasks
