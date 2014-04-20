@@ -6,7 +6,7 @@ $(function(){
 	});
 
     var container = $('#masonry-container');
-  
+
     $('#masonry-container').masonry({
       itemSelector : '.item',
       columnWidth: function( containerWidth) {
@@ -20,19 +20,19 @@ $(function(){
       isAnimated: true,
       isFitWidth: true
     });
-  
+
     $(".like-button").click(function(){
     	var likeCount = this.parentNode.getElementsByClassName('like-count')[0].innerHTML;
     	likeCount++;
     	this.parentNode.getElementsByClassName('like-count')[0].innerHTML = likeCount;
     });
-  
+
     $(".follow-button").click(function(){
     	var followCount = this.parentNode.getElementsByClassName('follow-count')[0].innerHTML;
     	followCount++;
     	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
     });
-  
+
     $(window).load(function(){
      $('.flexslider').flexslider({
          animation: "slide",
@@ -43,9 +43,12 @@ $(function(){
          controlNav:false,
      });
     });
+
+    $( 'a' ).imageLightbox();
+
     // Infinite Scroll
     // container.infinitescroll({
-    //   navSelector  : '#page-nav',    // selector for the paged navigation 
+    //   navSelector  : '#page-nav',    // selector for the paged navigation
     //   nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
     //   itemSelector : '.box',     // selector for all items you'll retrieve
     //   loading: {
@@ -61,7 +64,7 @@ $(function(){
     //     $newElems.imagesLoaded(function(){
     //       // show elems now they're ready
     //       $newElems.animate({ opacity: 1 });
-    //       $container.masonry( 'appended', $newElems, true ); 
+    //       $container.masonry( 'appended', $newElems, true );
     //     });
     //   });
 });

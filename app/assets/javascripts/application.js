@@ -10,12 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery
+//= require_tree.
 //= require bootstrap
 //= require masonry/jquery.masonry
 //= require masonry/jquery.event-drag
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
-//= require jquery.flexslider
+//= require jquery.flexslider-min
+//= require imagelightbox.min
+//= require ideas

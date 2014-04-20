@@ -1,7 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/assets/idea.css.scss" />
-      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
-
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
 </head>
 
 <p id="notice"><%= notice %></p>
@@ -75,12 +74,12 @@
             <div class="section media">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li><%= image_tag("tmp1.jpg")%></li>
-                        <li><%= image_tag("tmp2.jpg")%></li>
-                        <li><%= image_tag("tmp3.jpg")%></li>
-                        <li><%= image_tag("tmp4.jpg")%></li>
-                        <li><%= image_tag("tmp5.jpg")%></li>
-                        <li><%= image_tag("tmp6.jpg")%></li>
+                        <li><%= link_to image_tag("tmp1.jpg"), "/assets/tmp1.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <li><%= link_to image_tag("tmp2.jpg"), "/assets/tmp2.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <li><%= link_to image_tag("tmp3.jpg"), "/assets/tmp3.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <li><%= link_to image_tag("tmp4.jpg"), "/assets/tmp4.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <li><%= link_to image_tag("tmp5.jpg"), "/assets/tmp5.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <li><%= link_to image_tag("tmp6.jpg"), "/assets/tmp6.jpg", :data => {:imagelightbox=>"a"} %></li>
                     </ul>
                 </div>
             </div>
@@ -104,5 +103,4 @@
             </div>
         </div>
     </div>
-
 </div>

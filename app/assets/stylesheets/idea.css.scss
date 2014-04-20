@@ -137,109 +137,107 @@ hr {
   #mainContainer {
   width: 100%;
   margin: auto;
-}
-
-#sideBarColumn {
-  width: 100%;
-  height: 100%;
-  float: left;
-  padding-right: 20px;
-}
-
-#contentColumn {
-  width: 100%;
-  height: 100%;
-  float: left;
-  padding-right: 20px;
-}
-
-.section.coverPhoto {
-    width: 50%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: atuo;
-}
-
-.section.coverPhoto.img {
-  width: 100%;
-}
-
-.section.contributors {
-    width: 100%;
-}
-
-.section.blurb {
-    width: 100%;
-    height: 100%;
-    word-wrap: break-word;
-}
-
-.section.description {
-    width: 100%;
-    height: 100%;
-}
-
-.question {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.section.media {
-    width: 100%;
-    height: 350px;
-}
-
-.section.comments {
-  width: 100%;
-  height: 100%;
-}
-
-#disqus_wrapper {
-  max-width: 1200px;
-}
-
-.contributor {
-  width: 190px;
-  height: 50px;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-hr {
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
-.contributorImg {
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin-right: 10px;
-}
-
-.contributorImg img {
-    border-radius: 2px;
   }
 
-.contributorContent {
-  width: 130px;
-  height: 50px;
-  float: left;
-}
+  #sideBarColumn {
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding-right: 20px;
+  }
 
-.contributor p {
-  margin: 0px;
-}
+  #contentColumn {
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding-right: 20px;
+  }
 
-.postedDate {
-  font-size: 10px;
-}
+  .section.coverPhoto {
+      width: 50%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: atuo;
+  }
 
-.contributingSince {
-  font-size: 10px;
-}
+  .section.coverPhoto.img {
+    width: 100%;
+  }
 
+  .section.contributors {
+      width: 100%;
+  }
 
+  .section.blurb {
+      width: 100%;
+      height: 100%;
+      word-wrap: break-word;
+  }
+
+  .section.description {
+      width: 100%;
+      height: 100%;
+  }
+
+  .question {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .section.media {
+      width: 100%;
+      height: 350px;
+  }
+
+  .section.comments {
+    width: 100%;
+    height: 100%;
+  }
+
+  #disqus_wrapper {
+    max-width: 1200px;
+  }
+
+  .contributor {
+    width: 190px;
+    height: 50px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .contributorImg {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .contributorImg img {
+      border-radius: 2px;
+    }
+
+  .contributorContent {
+    width: 130px;
+    height: 50px;
+    float: left;
+  }
+
+  .contributor p {
+    margin: 0px;
+  }
+
+  .postedDate {
+    font-size: 10px;
+  }
+
+  .contributingSince {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -248,3 +246,11 @@ hr {
   }
 }
 
+
+#imagelightbox
+{
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    z-index: 9999;
+}
