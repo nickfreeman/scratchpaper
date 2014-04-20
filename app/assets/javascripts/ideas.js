@@ -179,7 +179,9 @@ function updateCountdown() {
 }
 
 jQuery(document).ready(function($) {
+  if ($('#idea_blurb').length) {
     updateCountdown();
     $('#idea_blurb').change(updateCountdown);
     $('#idea_blurb').keyup(updateCountdown);
+  }
 });
