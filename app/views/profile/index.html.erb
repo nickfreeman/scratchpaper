@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/profile.css.scss" />
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
+</head>
+
+<div id="profileAbout">
+	<div id="profileSummary">
+		<div id="profileImg">
+			<%= image_tag("nick.jpg", :id => "profileImg") %>
+		</div>
+		<div id="profileName">
+			<h1><%= @user.name %></h1>
+		</div>
+		<div id="profileStats">
+		</div>
+	</div>
+</div>
