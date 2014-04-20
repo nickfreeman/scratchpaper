@@ -8,4 +8,6 @@ Idealy::Application.routes.draw do
   match '/ideas/:id/like' => 'ideas#like', via: 'get', as: :like
   match '/ideas/:id/follow' => 'ideas#follow', via: 'get', as: :follow
 
+  resources :profile
+
 end
