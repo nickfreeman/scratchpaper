@@ -1,0 +1,74 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/profile.css.scss" />
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
+</head>
+
+<div id="profileAbout">
+	<div id="profileSummary">
+		<div id="profileImg">
+			<%= image_tag("nick.jpg", :id => "profileImg") %>
+		</div>
+		<div id="profileName">
+			<h1><%= @user.name %></h1>
+		</div>
+		<div class="profileStats">
+			<div id="numIdeas">
+				IDEAS
+			</div>
+			<div id="numContributions">
+				CONTRIBUTIONS
+			</div>
+		</div>
+		<div class="profileStats">
+			<div id="numIdeasCount">
+				<b><%= @user.ideas.count %></b>
+			</div>
+			<div id="numContributionsCount">
+				<b>0</b>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div id="wrapper">
+    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+      <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
+      <% @user.ideas.each do |idea| %>
+        <% if idea.photo.exists? %>
+          <% photoExists = true %>
+          <div class="item w2">
+          <%= link_to idea, :class => "ideaLink w2" do %><%end%>
+        <% else %>
+          <div class="item">
+          <%= link_to idea, :class => "ideaLink" do %><%end%>
+        <% end %>
+            <% if photoExists %>
+              <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>
+            <% end %>
+            <% if photoExists %>
+              <p class="pw2">
+            <% else %>
+              <p>
+            <% end %>
+              <%= idea.blurb %>
+            <p>
+            <div class="item-buttons">
+
+              <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id do %>
+                <%= image_tag "icon_18944.png" %>
+              <% end %>
+              <div class="follow-count">
+                <%= idea.followers_count %>
+              </div>
+
+              <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id do %>
+                  <%= image_tag "icon_19367.png" %>
+              <% end %>
+              <div class="like-count">
+                <%= idea.votes.size %>
+              </div>
+            </div>
+          </div>
+      <%end%>
+  </div>
+</div>

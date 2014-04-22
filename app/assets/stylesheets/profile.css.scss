@@ -1,3 +1,57 @@
-// Place all the styles related to the Profile controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#profileSummary {
+    margin: 10px;
+    background: white;
+    color: #333;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 540px;
+}
+
+#profileImg {
+	width: 100px;
+	height: 100px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    float: left;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+}
+
+#profileName {
+	text-align: center;
+	margin-bottom: 1em;
+	margin-top: -1em;
+}
+
+.profileStats {
+	overflow: hidden;
+}
+
+#numIdeas {
+	float: left;
+	margin-left: 50px;
+}
+
+#numIdeasCount {
+	float: left;
+	margin-left: 62px;
+}
+
+#numContributionsCount {
+	float: right;
+	margin-right: 100px;
+}
+
+#numContributions {
+	float: right;
+	margin-right: 50px;
+}
