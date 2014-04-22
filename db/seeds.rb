@@ -33,7 +33,17 @@ img10 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img10.jpg'))
 img11 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img11.jpg'))
 img12 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img12.jpg'))
 
+
+ext_img1 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp1.jpg'))
+ext_img2 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp2.jpg'))
+ext_img3 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp3.jpg'))
+ext_img4 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp4.jpg'))
+ext_img5 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp5.jpg'))
+ext_img6 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tmp6.jpg'))
+
 imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
+
+ext_imgArr = [ext_img1, ext_img2, ext_img3, ext_img4, ext_img5, ext_img6]
 
 Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed, using a virtual person holding a camera.", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')), :problem => "We are currently unable to learn filming techniques without in-person training.  My TechCrunch colleague Natasha Lomas recently argued – quite convincingly – that startups should stop trying to make proximity-based social networking “happen” — that most attempts had failed, and even ongoing ventures like Foursquare have had to tone down the idea. And yet these apps still keep appearing. And who can blame them — we might as well do something social with that GPS chip.", :solution => "The app lets you tap the image of a friend to take a picture – in itself an innovative new kind of UI. But hold their picture down, and you record a short video of a few seconds. Using the front-facing camera you can send a selfie or, as is often the case, a short video message to your friend. Click on the bottom half of the camera field and you can type in a short message.")
 Idea.create(:blurb => "GPS with routes that maximize MPG", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'audi.jpg')))
@@ -46,7 +56,6 @@ Idea.create(:blurb => "Wind turbines along highways and interstates", :photo => 
 Idea.create(:blurb => "A website that tells you if you will need the assigned textbook for that class/professor")
 Idea.create(:blurb => "Website where you type in a word in your language, and see if it could be construed as offensive in any other language")
 Idea.create(:blurb => "Mechanics that take pictures of their progress while working on your car", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'mechanic.jpg')))
-
 
 99.times do |i|
 	puts (i+1)

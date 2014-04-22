@@ -246,11 +246,10 @@ hr {
   }
 }
 
-
 #imagelightbox
 {
-    width: 210px;
-    height: 210px;
+    width: 300px;
+    height: 300px;
     position: fixed;
     z-index: 9999;
     box-shadow: 0px 0px 3.125em rgba(0, 0, 0, 0.75);
@@ -258,4 +257,4 @@ hr {
 
 img {
     vertical-align: middle;
-} 
+}
