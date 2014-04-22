@@ -28,9 +28,13 @@ $(function(){
     });
 
     $(".follow-button").click(function(){
+        console.error('blah');
     	var followCount = this.parentNode.getElementsByClassName('follow-count')[0].innerHTML;
     	followCount++;
     	this.parentNode.getElementsByClassName('follow-count')[0].innerHTML = followCount;
+    });
+
+    $(".contributorButton").click(function(){
     });
 
     $(window).load(function(){

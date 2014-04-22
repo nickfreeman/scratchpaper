@@ -35,7 +35,7 @@
                 <% end %>
             <% end %>
             <div class="contributorButton">
-                <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put do %>
+                <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
                     Add Me As A Contributor!
                 <% end %>
             </div>
