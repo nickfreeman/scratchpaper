@@ -33,7 +33,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea}
+        format.html { redirect_to ideas_path}
         format.json { render action: 'show', status: :created, location: @idea }
       else
         format.html { render action: 'new' }
