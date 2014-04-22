@@ -15,41 +15,25 @@
         <div class="section contributors">
             <div class="contributor">
                 <div class="contributorImg">
-                  <%= image_tag("asaf.jpg") %>
+                    <%= image_tag(@idea.user.avatar.url(:medium))%>
                 </div>
                 <div class="contributorContent">
-                    <p>Asaf Avidan Antonir</p>
-                    <p class="postedDate">posted 4 weeks ago</p>
+                    <p><%= @idea.user.name %></p>
                 </div>
             </div>
             <hr>
-            <div class="contributor">
-                    <div class="contributorImg">
-                      <%= image_tag("nick.jpg") %>
+            <% if @idea.contributors.size > 0 %>
+                <% @idea.contributors.each do |contributor| %>
+                    <div class="contributor">
+                        <div class="contributorImg">
+                            <%= image_tag(contributor.user.avatar.url(:medium))%>
+                        </div>
+                        <div class="contributorContent">
+                            <p><%= contributor.user.name %></p>
+                        </div>
                     </div>
-                    <div class="contributorContent">
-                        <p>Nick Freeman</p>
-                        <p class="contributingSince">3 weeks</p>
-                    </div>
-                </div>
-                 <div class="contributor">
-                    <div class="contributorImg">
-                      <%= image_tag("james.jpg") %>
-                    </div>
-                    <div class="contributorContent">
-                        <p>James Sha</p>
-                        <p class="contributingSince">4 days</p>
-                    </div>
-                </div>
-                <div class="contributor">
-                    <div class="contributorImg">
-                      <%= image_tag("jackie.jpg") %>
-                    </div>
-                    <div class="contributorContent">
-                        <p>Jackie Chan</p>
-                        <p class="contributingSince">1 week</p>
-                    </div>
-                </div>
+                <% end %>
+            <% end %>
         </div>
     </div>
     <div id="contentColumn">

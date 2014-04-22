@@ -18,9 +18,6 @@
 
 I18n.enforce_available_locales = false
 
-# Create a test user
-User.create(:name => 'user 1', :email => 'test@test.com', :password => 'qwerasdf')
-
 # load images
 img1 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img1.jpg'))
 img3 = File.open(File.join(Rails.root, 'app', 'assets', 'images', 'img3.jpg'))
@@ -45,6 +42,10 @@ imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
 
 ext_imgArr = [ext_img1, ext_img2, ext_img3, ext_img4, ext_img5, ext_img6]
 
+# Create a test user
+test_user_1 = User.create(:name => 'user 1', :email => 'test@test.com', :password => 'qwerasdf', :avatar => img1)
+test_user_2 = User.create(:name => 'user 2', :email => 'test2@test.com', :password => 'qwerasdf', :avatar => img3)
+
 Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed, using a virtual person holding a camera.", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')), :problem => "We are currently unable to learn filming techniques without in-person training.  My TechCrunch colleague Natasha Lomas recently argued – quite convincingly – that startups should stop trying to make proximity-based social networking “happen” — that most attempts had failed, and even ongoing ventures like Foursquare have had to tone down the idea. And yet these apps still keep appearing. And who can blame them — we might as well do something social with that GPS chip.", :solution => "The app lets you tap the image of a friend to take a picture – in itself an innovative new kind of UI. But hold their picture down, and you record a short video of a few seconds. Using the front-facing camera you can send a selfie or, as is often the case, a short video message to your friend. Click on the bottom half of the camera field and you can type in a short message.")
 Idea.create(:blurb => "GPS with routes that maximize MPG", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'audi.jpg')))
 Idea.create(:blurb => "A Browser Extension That Lets You Choose What You Censor")
@@ -60,9 +61,11 @@ Idea.create(:blurb => "Mechanics that take pictures of their progress while work
 99.times do |i|
 	puts (i+1)
 	if (i+1) % 3 == 0
-		Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample, 
-			:problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true))
+		new_idea = Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample,
+			            :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => test_user_1)
+        new_idea.contributors.create(user: test_user_2, idea: new_idea)
 	else
-		Idea.create(:blurb => BetterLorem.c(100, true, true), :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true))
+		new_idea = Idea.create(:blurb => BetterLorem.c(100, true, true), :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => test_user_1)
+        new_idea.contributors.create(user: test_user_2, idea: new_idea)
 	end
 end

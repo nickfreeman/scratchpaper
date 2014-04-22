@@ -10,4 +10,6 @@ class Idea < ActiveRecord::Base
 
     has_many :attachments
     accepts_nested_attributes_for :attachments
+
+    has_many :contributors
 end

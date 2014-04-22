@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420004506) do
+ActiveRecord::Schema.define(version: 20140422045340) do
 
   create_table "attachments", force: true do |t|
     t.integer  "idea_id"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20140420004506) do
     t.integer  "attach_file_size"
     t.datetime "attach_updated_at"
   end
+
+  create_table "contributors", force: true do |t|
+    t.integer  "idea_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contributors", ["idea_id"], name: "index_contributors_on_idea_id"
+  add_index "contributors", ["user_id"], name: "index_contributors_on_user_id"
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
