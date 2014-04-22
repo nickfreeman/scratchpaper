@@ -42,7 +42,6 @@ imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
 
 ext_imgArr = [ext_img1, ext_img2, ext_img3, ext_img4, ext_img5, ext_img6]
 
-# Create a test user
 test_user_1 = User.create(:name => 'user 1', :email => 'test@test.com', :password => 'qwerasdf', :avatar => img1)
 test_user_2 = User.create(:name => 'user 2', :email => 'test2@test.com', :password => 'qwerasdf', :avatar => img3)
 
@@ -69,3 +68,15 @@ Idea.create(:blurb => "Mechanics that take pictures of their progress while work
         new_idea.contributors.create(user: test_user_2, idea: new_idea)
 	end
 end
+
+Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed, using a virtual person holding a camera.", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')), :problem => "We are currently unable to learn filming techniques without in-person training.  Many of my friend spend hundreds of dollars on lessons in cinamatogrphy, learning the best angles for the shots that we want to include in our films. Watching videos definitely helps to learn cinematography, but seeing what is done behind the camera for every shot would be very useful.", :solution => "I imagine a solution where a device can be added to a camera during a shot, and the motion is detected to recoginze the speed and direction of the camera's motion, as well as the ways it is tilted and turned. If this motion can then be translated into a virtual camera man which is doing the filming, it could help teach aspiring cinematographers the ways that very intricate shots are done.")
+Idea.create(:blurb => "GPS with routes that maximize MPG", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'audi.jpg')))
+Idea.create(:blurb => "A Browser Extension That Lets You Choose What You Censor")
+Idea.create(:blurb => "Fundraising website that lets common people tell politicians if you vote for X we will donate $ to whoever runs against you")
+Idea.create(:blurb => "Jukebox app for bars", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'jukebox.jpg')))
+Idea.create(:blurb => "A resume that illustrates your present ability rather than your employment history")
+Idea.create(:blurb => "A microwave with a built-in whisk/stirrer so you don't have to remove your food every two minutes and stir it")
+Idea.create(:blurb => "Wind turbines along highways and interstates", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'turbine.jpg')))
+Idea.create(:blurb => "A website that tells you if you will need the assigned textbook for that class/professor")
+Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed, using a virtual person holding a camera.", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')), :problem => "We are currently unable to learn filming techniques without in-person training.  Many of my friend spend hundreds of dollars on lessons in cinamatogrphy, learning the best angles for the shots that we want to include in our films. Watching videos definitely helps to learn cinematography, but seeing what is done behind the camera for every shot would be very useful.", :solution => "I imagine a solution where a device can be added to a camera during a shot, and the motion is detected to recoginze the speed and direction of the camera's motion, as well as the ways it is tilted and turned. If this motion can then be translated into a virtual camera man which is doing the filming, it could help teach aspiring cinematographers the ways that very intricate shots are done.")
+

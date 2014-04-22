@@ -32,6 +32,10 @@ img {
   }
 // apply styles to HTML elements
 // to make views framework-neutral
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 main {
   @extend .container;
   background-color: #eee;
@@ -80,6 +84,15 @@ section {
   @extend .btn-xs;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+input { 
+  background-color: white;
+}
+
+
 .input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .input-group-lg > .input-group-btn > .submit, .authform .input-group-lg > .input-group-btn > .button, .input-group-lg > .input-group-btn > .button-xs {
   height: 40px;
   padding: 10px 16px;
@@ -92,4 +105,29 @@ section {
 
 .input-group-addon {
   height: 40px;
+}
+
+.well, .authform form, .authform fieldset {
+  background-color: white;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+}
+
+.form-control {
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+label {
+  font-weight: 500;
+}
+
+.btn-primary, .submit, .authform .button, .button-xs {
+  
 }

@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+html {
+	height: 100%;
+}
+
 main {
-	background: #eee;
+	
 	margin-top: 0px;
 	padding: 0px;
 }
@@ -13,6 +17,12 @@ body {
 	padding-top: 50px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
+	height: 100%;
+	background: #eee;
+}
+
+textarea {
+	resize: none;
 }
 
 #wrapper {
@@ -69,13 +79,13 @@ body {
 
 @media screen and (max-width: 480px) {
 	.item {
-		font-size: 14px;
+		font-size: 12px;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	.body {
-		font-size: 12px;
+		font-size: 10px;
 	}
 }
 
@@ -192,4 +202,99 @@ body {
     -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
     -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+}
+
+#new-idea {
+	background: white;
+	padding: 25px;
+	max-width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px; 
+	border-radius: 4px;
+	padding-bottom: 15px;
+}
+
+#new-idea-cover-photo {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#cover-photo-file-field {
+	opacity: 0;
+	width: 45%;
+	height: 25px;
+	z-index: 2;
+	position: absolute;
+	cursor: pointer;
+}
+
+#add-cover-photo-img {
+	width: 50%;
+	z-index: 1;
+}
+
+#new-idea-buttons {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	height: 25px;
+}
+
+.new-idea-button {
+	width: 45%;
+	height: 25px;
+	background: #eee;
+	float: left;
+}
+
+.new-idea-button.right {
+	float: right;
+}
+
+#edit-blurb {
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;
+	border-color: #ccc;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+#edit-problem {
+	width: 100%;
+	border-style: none;
+	height: 120px;
+	margin-bottom: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ccc;
+	padding: 5px;
+	scroll-top: 0;
+}
+
+#edit-solution {
+	width: 100%;
+	border-style: none;
+	height: 120px;
+	margin-bottom: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ccc;
+	padding: 5px;
+}
+
+#new-idea-submit-wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	width: 50px;
+}
+
+#new-idea-submit {
+	border-style: none;
+	background: #eee;	
+	width: 50px;
 }

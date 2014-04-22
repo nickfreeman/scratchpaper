@@ -11,7 +11,7 @@
           <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="idea-countdown">140</span>
-              <%= f.text_field :blurb, :class => "form-control",  :placeholder => "What's your latest idea?", :maxlength => 140 %>
+              <%= f.text_field :blurb, :class => "form-control",  :autocomplete => "off", :placeholder => "What's your latest idea?", :maxlength => 140 %>
               <div class="input-group-btn">
                 <!-- Button and dropdown menu -->
                 <%= f.submit "post", :class => "btn btn-default", :id => "new-idea-post-button", :tabindex => "-1" %>
@@ -37,7 +37,7 @@
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
       <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
-      <% @ideas.each do |idea| %>
+      <% @ideas.reverse.each do |idea| %>
         <% if idea.photo.exists? %>
           <% photoExists = true %>
           <div class="item w2">

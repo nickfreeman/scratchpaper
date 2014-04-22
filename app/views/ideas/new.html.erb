@@ -1,6 +1,7 @@
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
 <!-- <%= render 'form' %> -->
 
-<div id="contentColumn">
+<!-- <div id="contentColumn">
     <div class="section blurb">
         "<%= @idea.blurb %>"
     </div>
@@ -19,20 +20,31 @@
         </p>
     </div>
 
+</div> -->
+
+<div id="new-idea">
+  <%= form_for @idea, url: {action: "create"}, id: "new" do |f| %>
+      <!-- <div id="new-idea-cover-photo">
+        <%= image_tag "asaf.jpg", :id => "add-cover-photo-img" %>
+      </div>
+
+      <div id="new-idea-buttons">
+        <div class="new-idea-button left">
+          <%= f.file_field :photo, id: "cover-photo-file-field" %>
+        </div>
+        <div class="new-idea-button right">
+        </div>
+      </div> -->
+
+      <%= f.text_field :blurb, id: "edit-blurb", placeholder: "Quick blurb...", maxlength: "140", autocomplete: "off" %>
+
+      <%= f.text_area :problem, id: "edit-problem", placeholder: "What is the problem?", autocomplete: "off" %>
+
+      <%= f.text_area :solution, id: "edit-solution", placeholder: "How do you want to solve it?", autocomplete: "off" %>
+
+      <div id="new-idea-submit-wrapper">
+        <%= f.submit "post", id: "new-idea-submit" %>
+      </div>
+  <% end %>
 </div>
 
-<%= form_for @idea, url: {action: "create"} do |f| %>
-
-  <%= f.label "Short Description" %>
-  <%= f.text_field :blurb %>
-
-  <%= f.label "What is the problem?" %>
-  <%= f.text_area :problem %>
-
-  <%= f.label "How do you want to solve it?" %>
-  <%= f.text_area :solution %>
-
-  <%= f.submit "Done" %>
-<% end %>
-
-<%= link_to 'Back', ideas_path %>
