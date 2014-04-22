@@ -34,6 +34,11 @@
                     </div>
                 <% end %>
             <% end %>
+            <div class="contributorButton">
+                <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put do %>
+                    Add Me As A Contributor!
+                <% end %>
+            </div>
         </div>
     </div>
     <div id="contentColumn">

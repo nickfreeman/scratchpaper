@@ -58,14 +58,14 @@
             <p>
             <div class="item-buttons">
 
-              <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id do %>
+              <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id, :method => :put do %>
                 <%= image_tag "icon_18944.png" %>
               <% end %>
               <div class="follow-count">
                 <%= idea.followers_count %>
               </div>
 
-              <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id do %>
+              <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id, :method => :put do %>
                   <%= image_tag "icon_19367.png" %>
               <% end %>
               <div class="like-count">

@@ -76,6 +76,14 @@ class IdeasController < ApplicationController
     redirect_to ideas_path
   end
 
+  def contribute
+    idea = Idea.find(params[:id])
+    if not idea.contributors.exists?(:user => current_user)
+        idea.contributors.create(:user => current_user, :idea => idea)
+    end
+    redirect_to ideas_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
