@@ -87,9 +87,8 @@ class IdeasController < ApplicationController
   def uncontribute
     idea = Idea.find(params[:id])
     if idea.contributors.exists?(:user => current_user)
-        idea.contributors.find(:user => current_user)
-        #contribution = idea.contributors.find(:user => current_user)
-        #contribution.destory
+        contributor = idea.contributors.where(:user => current_user).first
+        contributor.destroy
     end
     redirect_to ideas_path
   end
