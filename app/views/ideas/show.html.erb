@@ -15,7 +15,11 @@
         <div class="section contributors">
             <div class="contributor">
                 <div class="contributorImg">
-                    <%= image_tag(@idea.user.avatar.url(:medium))%>
+                    <% if @idea.user.avatar.exists? %>
+                        <%= image_tag(@idea.user.avatar.url(:medium))%>
+                    <% else %>
+                        <%= image_tag("default_pro_pic.jpg")%>
+                    <% end %>
                 </div>
                 <div class="contributorContent">
                     <p><%= @idea.user.name %></p>
