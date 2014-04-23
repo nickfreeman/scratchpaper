@@ -25,9 +25,15 @@
             <% if @idea.contributors.size > 0 %>
                 <% @idea.contributors.each do |contributor| %>
                     <div class="contributor">
-                        <div class="contributorImg">
-                            <%= image_tag(contributor.user.avatar.url(:medium))%>
-                        </div>
+                        <% if contributor.user.avatar.exists? %>
+                            <div class="contributorImg">
+                                <%= image_tag(contributor.user.avatar.url(:medium))%>
+                            </div>
+                        <% else %>
+                            <div class="contributorImg">
+                                <%= image_tag("default_pro_pic.jpg")%>
+                            </div>
+                        <% end %>
                         <div class="contributorContent">
                             <p><%= contributor.user.name %></p>
                         </div>
