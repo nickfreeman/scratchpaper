@@ -5,8 +5,12 @@
 
 <div id="profileAbout">
 	<div id="profileSummary">
-		<div id="profileImg">
-			<%= image_tag("nick.jpg", :id => "profileImg") %>
+        <div id="profileImg">
+            <% if @user.avatar.exists? %>
+                <%= image_tag(@user.avatar.url(:medium), :id => "profileImg") %>
+            <% else %>
+                <%= image_tag("default_pro_pic.jpg", :id => "profileImg") %>
+            <% end %>
 		</div>
 		<div id="profileName">
 			<h1><%= @user.name %></h1>
