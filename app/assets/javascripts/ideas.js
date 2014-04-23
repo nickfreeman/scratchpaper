@@ -99,6 +99,7 @@ function adjustItems(width) {
    	var elements4 = getElementsByClassName(document, "pw2"), n4 = elements4.length;
     var elements5 = getElementsByClassName(document, "ideaLink"), n5 = elements5.length;
     var elements6 = getElementsByClassName(document, "ideaLink w2"), n6 = elements6.length;
+    var elements7 = getElementsByClassName(document, "item-buttons-w2"), n7 = elements7.length;
 
 
 	if (width < 480) {
@@ -119,8 +120,8 @@ function adjustItems(width) {
 		}
 		for (var i = 0; i < n3; i++) {
 		    var e3 = elements3[i];
-		    e3.style.width=width*.40 + "px";
-		    e3.style.height=width*.40 + "px";
+		    e3.style.width=width*.45 + "px";
+		    e3.style.height=width*.45 + "px";
 		}
 		for (var i = 0; i < n4; i++) {
 		    var e4 = elements4[i];
@@ -137,6 +138,10 @@ function adjustItems(width) {
         e6.style.width=width*.90 + "px";
         e6.style.height=width*.33 + "px";
     }
+    for (var i = 0; i < n7; i++) {
+        var e7 = elements7[i];
+        e7.style.left = width*.45 + 32 + "px";
+    }
   } else {
     for (var i = 0; i < n; i++) {
 		    var e = elements[i];
@@ -151,8 +156,8 @@ function adjustItems(width) {
 		}
 		for (var i = 0; i < n3; i++) {
 		    var e3 = elements3[i];
-		    e3.style.width=200 + "px";
-		    e3.style.height=200 + "px";
+		    e3.style.width=220 + "px";
+		    e3.style.height=220 + "px";
 		}
 		for (var i = 0; i < n4; i++) {
 		    var e4 = elements4[i];
@@ -168,6 +173,10 @@ function adjustItems(width) {
         var e6 = elements6[i];
         e6.style.width=430 + "px";
         e6.style.height=170 + "px";
+    }
+    for (var i = 0; i < n7; i++) {
+        var e7 = elements7[i];
+        e7.style.left = 255 + "px";
     }
     	$("stylesheet").attr("href", "/assets/home.css.scss");
     }

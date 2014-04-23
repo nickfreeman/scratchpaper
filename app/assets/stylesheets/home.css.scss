@@ -54,6 +54,10 @@ textarea {
     font-size: 18px;
     position: absolute;
     border-radius: 4px;
+    border-style: solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-width: 1px;
+
 }
 
 .ideaLink {
@@ -95,7 +99,8 @@ textarea {
 	width: 220px;
 	height: 220px;
 	padding: 15px;
-	margin-left: 15px;
+	margin-left: 18px;
+	margin-bottom: 0px;
 }
 
 .item.w2 .img-container {
@@ -103,21 +108,31 @@ textarea {
 	height: 200px;
 	width: 200px;
 	border-radius: 4px;
-	margin-top: 10px;
-	margin-left: 10px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 
 .item-buttons {
-	right: 10px;
-	bottom: 10px;
+	left: 15px;
+	bottom: 15px;
 	position: absolute;
 	width: 80px;
 	height: 15px;
 	opacity: 0.7;	
 }
 
+.item-buttons-w2 {
+	left: 15px;
+	bottom: 15px;
+	position: absolute;
+	width: 80px;
+	height: 15px;
+	opacity: 0.7;	
+	left: 255px;
+}
+
 .follow-button {
-	float: right;
+	float: left;
 	width: 15px;
 	height: 15px;
 	margin-top: 0px;
@@ -132,14 +147,13 @@ textarea {
 .follow-count {
 	font-size: 13px;
 	font-weight: bold;
-	float: right;
+	float: left;
 	margin: 0px;
 	bottom: 0px;
-	margin-left: 5px;
 }
 
 .like-button {
-	float: right;
+	float: left;
 	width: 12px;
 	height: 12px;
 	margin-top: 2px;
@@ -155,7 +169,7 @@ textarea {
 .like-count {
 	font-size: 13px;
 	font-weight: bold;
-	float: right;
+	float: left;
 	margin: 0px;
 	bottom: 0px;
 	margin-left: 3px;
