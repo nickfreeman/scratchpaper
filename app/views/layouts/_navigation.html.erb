@@ -17,7 +17,9 @@
       <% if user_signed_in? %>
         <p class="navbar-text navbar-right">
           <% if current_user.avatar.exists? %>
-            <%= image_tag(current_user.avatar.url(:thumb), :class => "avatar") %>
+              <%= image_tag(current_user.avatar.url(:thumb), :class => "avatar") %>
+          <% else %>
+              <%= image_tag("default_pro_pic.jpg", :class => "avatar") %>
           <% end %>
           <%= link_to current_user.name, profile_index_path, :class => "navbar-link" %></p>
       <% end %> 
