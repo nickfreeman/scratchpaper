@@ -77,19 +77,13 @@
                 <%= @idea.solution %>
             </p>
         </div>
-        <% if @idea.photo.exists? %>
+        <% if @idea.attachments.count != 0 %>
             <div class="section media">
                 <div class="flexslider">
                     <ul class="slides">
-                        <!--<% @idea.attachments.each do |img| %>
-                            <li><%= link_to image_tag(img.url(:medium)), "/assets/tmp1.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <% end %>-->
-                        <li><%= link_to image_tag("tmp1.jpg"), "/assets/tmp1.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <li><%= link_to image_tag("tmp2.jpg"), "/assets/tmp2.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <li><%= link_to image_tag("tmp3.jpg"), "/assets/tmp3.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <li><%= link_to image_tag("tmp4.jpg"), "/assets/tmp4.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <li><%= link_to image_tag("tmp5.jpg"), "/assets/tmp5.jpg", :data => {:imagelightbox=>"a"} %></li>
-                        <li><%= link_to image_tag("tmp6.jpg"), "/assets/tmp6.jpg", :data => {:imagelightbox=>"a"} %></li>
+                        <% @idea.attachments.each do |img| %>
+                            <li><%= link_to image_tag(img.attach.url(:medium)), img.attach.url(), :data => {:imagelightbox=>"a"} %></li>
+                        <% end %>
                     </ul>
                 </div>
             </div>
