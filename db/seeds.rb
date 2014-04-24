@@ -45,8 +45,6 @@ imgArr = [img1, img3, img4, img5, img6, img7, img9, img10, img11, img12]
 
 ext_imgArr = [ext_img1, ext_img2, ext_img3, ext_img4, ext_img5, ext_img6]
 
-test_user_1 = User.create(:name => 'user 1', :email => 'test@test.com', :password => 'qwerasdf', :avatar => img1)
-test_user_2 = User.create(:name => 'user 2', :email => 'test2@test.com', :password => 'qwerasdf', :avatar => img3)
 nick_user = User.create(:name => 'Nick', :email => 'nick@nick.com', :password => 'qwerasdf', :avatar => imgNick)
 asaf_user = User.create(:name => 'Asaf', :email => 'asaf@asaf.com', :password => 'qwerasdf', :avatar => imgAsaf)
 james_user = User.create(:name => 'James', :email => 'james@james.com', :password => 'qwerasdf', :avatar => imgJames)
@@ -56,11 +54,11 @@ james_user = User.create(:name => 'James', :email => 'james@james.com', :passwor
 	puts (i+1)
 	if (i+1) % 3 == 0
 		new_idea = Idea.create(:blurb => BetterLorem.c(100, true, true), :photo => imgArr.sample,
-			            :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => test_user_1)
-        new_idea.contributors.create(user: test_user_2, idea: new_idea)
+			            :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => james_user)
+        new_idea.contributors.create(user: nick_user, idea: new_idea)
 	else
-		new_idea = Idea.create(:blurb => BetterLorem.c(100, true, true), :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => test_user_1)
-        new_idea.contributors.create(user: test_user_2, idea: new_idea)
+		new_idea = Idea.create(:blurb => BetterLorem.c(100, true, true), :problem => BetterLorem.c(300, true, true), :solution => BetterLorem.c(400, true, true), :user => nick_user)
+        new_idea.contributors.create(user: asaf_user, idea: new_idea)
 	end
 end
 
