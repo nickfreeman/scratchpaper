@@ -14,8 +14,7 @@
         <% end %>
         <div class="section contributors">
             <div class="contributor">
-                <!--CHANGE TO ACTUAL POSTER LINK -->
-                <%= link_to profile_index_path, :class => "contributor-profile-link" do %><%end%>
+                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
                 <div class="contributorImg">
                     <% if @idea.user.avatar.exists? %>
                         <%= image_tag(@idea.user.avatar.url(:medium))%>
@@ -31,8 +30,7 @@
             <% if @idea.contributors.size > 0 %>
                 <% @idea.contributors.each do |contributor| %>
                     <div class="contributor">
-                        <!--CHANGE TO ACTUAL CONTRIBUTOR LINK -->
-                        <%= link_to profile_index_path, :class => "contributor-profile-link" do %><%end%>
+                        <%= link_to profile_path(contributor.user_id), :class => "contributor-profile-link" do %><%end%>
                         <div class="contributorImg">
                             <% if contributor.user.avatar.exists? %>
                                 <%= image_tag(contributor.user.avatar.url(:medium))%>
