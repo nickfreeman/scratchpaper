@@ -16,21 +16,21 @@
 			<h1><%= @user.name %></h1>
 		</div>
 		<div class="profileStats">
-			<div id="numIdeas">
-				IDEAS
-			</div>
-			<div id="numContributions">
-				CONTRIBUTIONS
-			</div>
-		</div>
-		<div class="profileStats">
 			<div id="numIdeasCount">
 				<b><%= @user.ideas.count %></b>
 			</div>
 			<div id="numContributionsCount">
-                <b> <%= @user.contributors.count %> </b>
+        <b> <%= @user.contributors.count %> </b>
 			</div>
 		</div>
+    <div class="profileStats">
+      <div id="numIdeas">
+        IDEAS
+      </div>
+      <div id="numContributions">
+        CONTRIBUTIONS
+      </div>
+    </div>
 	</div>
 </div>
 

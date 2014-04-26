@@ -16,20 +16,14 @@
     margin-right: 1em;
     margin-bottom: 1em;
     float: left;
-
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
 
-    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
 #profileName {
 	text-align: center;
-	margin-bottom: 1em;
-	margin-top: -1em;
+	margin-top: -1.25em;
+    margin-bottom: -1em;
 }
 
 .profileStats {
@@ -44,11 +38,13 @@
 #numIdeasCount {
 	float: left;
 	margin-left: 62px;
+    font-size: 200%;
 }
 
 #numContributionsCount {
 	float: right;
 	margin-right: 100px;
+    font-size: 200%;
 }
 
 #numContributions {

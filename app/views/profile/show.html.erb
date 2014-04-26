@@ -4,34 +4,34 @@
 </head>
 
 <div id="profileAbout">
-	<div id="profileSummary">
+  <div id="profileSummary">
         <div id="profileImg">
             <% if @user.avatar.exists? %>
                 <%= image_tag(@user.avatar.url(:medium), :id => "profileImg") %>
             <% else %>
                 <%= image_tag("default_pro_pic.jpg", :id => "profileImg") %>
             <% end %>
-		</div>
-		<div id="profileName">
-			<h1><%= @user.name %></h1>
-		</div>
-		<div class="profileStats">
-			<div id="numIdeas">
-				IDEAS
-			</div>
-			<div id="numContributions">
-				CONTRIBUTIONS
-			</div>
-		</div>
-		<div class="profileStats">
-			<div id="numIdeasCount">
-				<b><%= @user.ideas.count %></b>
-			</div>
-			<div id="numContributionsCount">
-                <b> <%= @user.contributors.count %> </b>
-			</div>
-		</div>
-	</div>
+    </div>
+    <div id="profileName">
+      <h1><%= @user.name %></h1>
+    </div>
+    <div class="profileStats">
+      <div id="numIdeasCount">
+        <b><%= @user.ideas.count %></b>
+      </div>
+      <div id="numContributionsCount">
+        <b> <%= @user.contributors.count %> </b>
+      </div>
+    </div>
+    <div class="profileStats">
+      <div id="numIdeas">
+        IDEAS
+      </div>
+      <div id="numContributions">
+        CONTRIBUTIONS
+      </div>
+    </div>
+  </div>
 </div>
 
   <div id="wrapper">
