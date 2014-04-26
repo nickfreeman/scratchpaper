@@ -8,7 +8,6 @@ html {
 }
 
 main {
-	
 	margin-top: 0px;
 	padding: 0px;
 }
@@ -78,8 +77,6 @@ textarea {
 	width: 460px;
 	padding: 0px;
 }
-
-
 
 @media screen and (max-width: 480px) {
 	.item {
@@ -197,7 +194,10 @@ textarea {
 
 .input-group-addon {
 	background-color: #FFFFFF;
-	border: 1px solid #FFFFFF;
+	border-style: solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	border-width: 1px; 
+	border-radius: 0px;
 }
 
 /* Rounded avatars */
