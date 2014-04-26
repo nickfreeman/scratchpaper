@@ -1,5 +1,5 @@
 #profileSummary {
-    margin: 10px;
+    margin-top: 20px;
     background: white;
     color: #333;
     padding: 15px;
@@ -50,4 +50,33 @@
 #numContributions {
 	float: right;
 	margin-right: 50px;
+}
+
+@media screen and (max-width: 480px) {
+    #profileSummary {
+        width: 95%;
+    }
+
+    #numIdeas {
+        float: left;
+        margin-left: 20px;
+    }
+
+    #numIdeasCount {
+        float: left;
+        margin-left: 32px;
+        font-size: 200%;
+    }
+
+    #numContributions {
+        float: right;
+        margin-right: 20px;
+    }
+
+    #numContributionsCount {
+        float: right;
+        margin-right: 70px;
+        font-size: 200%;
+    }
+
 }
