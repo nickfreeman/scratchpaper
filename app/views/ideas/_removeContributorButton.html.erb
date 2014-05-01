@@ -1,0 +1,4 @@
+<%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :'data-update-target' => 'contributors_section', :remote => true do %>
+    Remove Me As A Contributor
+<% end %>
+

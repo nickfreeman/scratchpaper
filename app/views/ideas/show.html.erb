@@ -30,15 +30,11 @@
             <div id="contributor_list">
                 <%= render :partial => @idea.contributors %>
             </div>
-            <div class="contributorButton">
+            <div class="contributorButton", id="contributorButton">
                 <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
-                    <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :'data-update-target' => 'contributors_section', :remote => true do %>
-                        Add Me As A Contributor!
-                    <% end %>
+                    <%= render 'addContributorButton' %>
                 <% else %>
-                    <%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :'data-update-target' => 'contributors_section', :remote => true do %>
-                        Remove Me As A Contributor
-                    <% end %>
+                    <%= render 'removeContributorButton' %>
                 <% end %>
             </div>
         </div>

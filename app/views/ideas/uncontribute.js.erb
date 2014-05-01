@@ -1,1 +1,2 @@
 $('#contributor_<%= @contributor.id %>').fadeOut();
+$('#contributorButton').html('<%= escape_javascript(render 'addContributorButton') %>');

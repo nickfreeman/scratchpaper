@@ -77,9 +77,9 @@ class IdeasController < ApplicationController
   end
 
   def contribute
-    idea = Idea.find(params[:id])
-    if not idea.contributors.exists?(:user => current_user)
-        @contributor = idea.contributors.create(:user => current_user, :idea => idea)
+    @idea = Idea.find(params[:id])
+    if not @idea.contributors.exists?(:user => current_user)
+        @contributor = @idea.contributors.create(:user => current_user, :idea => @idea)
     end
     respond_to do |format|
         format.html{ redirect_to :back }
@@ -88,9 +88,9 @@ class IdeasController < ApplicationController
   end
 
   def uncontribute
-    idea = Idea.find(params[:id])
-    @contributor = idea.contributors.where(:user => current_user).first
-    if idea.contributors.exists?(:user => current_user)
+    @idea = Idea.find(params[:id])
+    @contributor = @idea.contributors.where(:user => current_user).first
+    if @idea.contributors.exists?(:user => current_user)
         @contributor.destroy
     end
     respond_to do |format|
