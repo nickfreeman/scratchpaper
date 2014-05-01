@@ -1,6 +1,134 @@
-<h1>Editing idea</h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/idea.css.scss" />
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
+</head>
 
-<%= render 'form' %>
+<p id="notice"></p>
 
-<%= link_to 'Show', @idea %> |
-<%= link_to 'Back', ideas_path %>
+<%= form_for @idea, url: {action: "update"} do |f| %>
+<div id="mainContainer">
+    <div id="sideBarColumn">
+        <% if @idea.photo.exists? %>
+            <div class="section coverPhoto">
+                  <%= image_tag(@idea.photo.url(:medium))%>
+            </div>
+        <% end %>
+        <div class="section contributors">
+            <div class="contributor">
+                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
+                <div class="contributorImg">
+                    <% if @idea.user.avatar.exists? %>
+                        <%= image_tag(@idea.user.avatar.url(:medium))%>
+                    <% else %>
+                        <%= image_tag("default_pro_pic.jpg")%>
+                    <% end %>
+                </div>
+                <div class="contributorContent">
+                    <p><%= @idea.user.name %></p>
+                </div>
+            </div>
+            <hr>
+            <% if @idea.contributors.size > 0 %>
+                <% @idea.contributors.each do |contributor| %>
+                    <div class="contributor">
+                        <%= link_to profile_path(contributor.user_id), :class => "contributor-profile-link" do %><%end%>
+                        <div class="contributorImg">
+                            <% if contributor.user.avatar.exists? %>
+                                <%= image_tag(contributor.user.avatar.url(:medium))%>
+                            <% else %>
+                                <%= image_tag("default_pro_pic.jpg")%>
+                            <% end %>
+                        </div>
+                        <div class="contributorContent">
+                            <p><%= contributor.user.name %></p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="contributorButton">
+                <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
+                    <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
+                        Add Me As A Contributor!
+                    <% end %>
+                <% else %>
+                    <%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
+                        Remove Me As A Contributor
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <div id="new-idea-submit-wrapper">
+        <%= f.submit "post", id: "new-idea-submit" %>
+      </div>
+    </div>
+    <div id="contentColumn">
+        <div class="section blurb">
+           <%= f.text_field :blurb, id: "edit-blurb", placeholder: "Quick blurb...", maxlength: "140", autocomplete: "off" %>
+        </div>
+
+        <div class="section description">
+            <p class="question">
+                What is the problem?
+            </p>
+            <p class="answer">
+                <%= f.text_area :problem, id: "edit-problem", placeholder: "What is the problem?", autocomplete: "off" %>
+            </p>
+            <p class="question">
+                How do you want to solve it?
+            </p>
+            <p class="answer">
+                <%= f.text_area :solution, id: "edit-solution", placeholder: "How do you want to solve it?", autocomplete: "off" %>
+            </p>
+        </div>
+    
+
+        <% if @idea.attachments.count != 0 %>
+            <div class="section media">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <% @idea.attachments.each do |img| %>
+                            <li><%= link_to image_tag(img.attach.url(:medium)), img.attach.url(), :data => {:imagelightbox=>"a"} %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        <% end %>
+
+        <div class="section comments">
+            <div id="disqus_wrapper">
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                  var disqus_shortname = 'scratchpaper'; // required: replace example with your forum shortname
+
+                  /* * * DON'T EDIT BELOW THIS LINE * * */
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/assets/show.js" ></script>
+</div>
+
+
+
+
+
+  <% end %>
+
+
+
+
+
+</div>
+
+
+
+<p id="notice"><%= notice %></p>
+

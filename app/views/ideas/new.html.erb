@@ -1,41 +1,19 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
-<!-- <%= render 'form' %> -->
-
-<!-- <div id="contentColumn">
-    <div class="section blurb">
-        "<%= @idea.blurb %>"
-    </div>
-    <div class="section description">
-        <p class="question">
-            What is the problem?
-        </p>      
-        <p class="answer">
-            <%= @idea.problem %>
-        </p>
-        <p class="question">
-            How do you want to solve it?
-        </p>
-        <p class="answer">
-            <%= @idea.solution %>
-        </p>
-    </div>
-
-</div> -->
 
 <div id="new-idea">
-  <h3>New idea</h3>
+ <!--  <h3>New idea</h3> -->
   <%= form_for @idea, url: {action: "create"}, id: "new" do |f| %>
-      <!-- <div id="new-idea-cover-photo">
-        <%= image_tag "asaf.jpg", :id => "add-cover-photo-img" %>
-      </div>
+<!--       <div id="new-idea-cover-photo">
+        <%= image_tag "default_pro_pic.jpg", :id => "add-cover-photo-img" %>
+      </div> -->
 
-      <div id="new-idea-buttons">
+<!--       <div id="new-idea-buttons">
         <div class="new-idea-button left">
           <%= f.file_field :photo, id: "cover-photo-file-field" %>
         </div>
         <div class="new-idea-button right">
         </div>
-      </div> -->
+      </div>  -->
 
       <%= f.text_field :blurb, id: "edit-blurb", placeholder: "Quick blurb...", maxlength: "140", autocomplete: "off" %>
 

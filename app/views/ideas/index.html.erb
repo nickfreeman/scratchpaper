@@ -1,11 +1,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/assets/ideas.css.scss" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
-  <div id="newIdea">
+
+
+  <div id="wrapper">
+    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+        <div id="newIdea">
     <div class="row">
       <div class="col-md-12">
           <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
@@ -33,10 +36,8 @@
       </div>
     </div>
   </div>
-
-  <div id="wrapper">
-    <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
       <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
+      <div id="all-ideas">
       <% @ideas.reverse.each do |idea| %>
         <% if idea.photo.exists? %>
           <% photoExists = true %>
@@ -81,40 +82,8 @@
             </div>
           </div>
       <%end%>
+    </div>
   </div>
 </div>
 
 </body>
-
-
-
-
-
-<!--
-<h1>Listing ideas</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ideas.each do |idea| %>
-      <tr>
-        <td><%= render_idea(idea) %></td>
-        <td><%= link_to 'Show', idea %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Idea', new_idea_path %>
--->

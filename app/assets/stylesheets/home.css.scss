@@ -35,6 +35,11 @@ textarea {
 	padding-top: 10px;
 }
 
+#all-ideas {
+	position: absolute;
+	top: 60px;
+}
+
 .navbar.navbar-inverse.navbar-fixed-top {
 	background: #333;
 	border-bottom: 0px;
@@ -80,7 +85,7 @@ textarea {
 
 @media screen and (max-width: 480px) {
 	.item {
-		font-size: 12px;
+		font-size: 10px;
 	}
 }
 
@@ -236,20 +241,20 @@ textarea {
 
 #cover-photo-file-field {
 	opacity: 0;
-	width: 45%;
+	width: 173px;
 	height: 25px;
 	z-index: 2;
 	position: absolute;
 	cursor: pointer;
+	left: -77px;
 }
 
 #add-cover-photo-img {
 	width: 50%;
-	z-index: 1;
 }
 
 #new-idea-buttons {
-	width: 50%;
+	width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
@@ -257,10 +262,11 @@ textarea {
 }
 
 .new-idea-button {
-	width: 45%;
+	width: 95px;
 	height: 25px;
 	background: #eee;
 	float: left;
+	position: relative;
 }
 
 .new-idea-button.right {
@@ -273,8 +279,8 @@ textarea {
 	border-width: 1px;
 	position: relative;
 	border-color: #ccc;
-	margin-bottom: 10px;
 	padding: 5px;
+	height: 50px;
 }
 
 #edit-problem {
