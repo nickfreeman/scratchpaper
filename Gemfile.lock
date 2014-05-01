@@ -236,7 +236,7 @@ DEPENDENCIES
   paperclip
   pg
   quiet_assets
-  rails
+  rails (= 4.0.2)
   rails_12factor
   rails_layout
   rolify
