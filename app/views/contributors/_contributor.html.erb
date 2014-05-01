@@ -1,0 +1,15 @@
+<% @idea.contributors.each do |contributor| %>
+    <div class="contributor", id='contributor_<%= contributor.id %>'>
+        <%= link_to profile_path(contributor.user_id), :class => "contributor-profile-link" do %><%end%>
+        <div class="contributorImg">
+            <% if contributor.user.avatar.exists? %>
+                <%= image_tag(contributor.user.avatar.url(:medium))%>
+            <% else %>
+                <%= image_tag("default_pro_pic.jpg")%>
+            <% end %>
+        </div>
+        <div class="contributorContent">
+            <p><%= contributor.user.name %></p>
+        </div>
+    </div>
+<% end %>

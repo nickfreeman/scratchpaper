@@ -1,10 +1,13 @@
 #profileSummary {
-    margin: 10px;
+    margin-top: 18px;
     background: white;
     color: #333;
     padding: 15px;
     font-size: 16px;
     border-radius: 4px;
+    border-style: solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-width: 1px;
     margin-left: auto;
     margin-right: auto;
     width: 540px;
@@ -16,20 +19,14 @@
     margin-right: 1em;
     margin-bottom: 1em;
     float: left;
-
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
 
-    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
 #profileName {
 	text-align: center;
-	margin-bottom: 1em;
-	margin-top: -1em;
+	margin-top: -1.25em;
+    margin-bottom: -1em;
 }
 
 .profileStats {
@@ -44,14 +41,45 @@
 #numIdeasCount {
 	float: left;
 	margin-left: 62px;
+    font-size: 200%;
 }
 
 #numContributionsCount {
 	float: right;
 	margin-right: 100px;
+    font-size: 200%;
 }
 
 #numContributions {
 	float: right;
 	margin-right: 50px;
+}
+
+@media screen and (max-width: 480px) {
+    #profileSummary {
+        width: 95%;
+    }
+
+    #numIdeas {
+        float: left;
+        margin-left: 20px;
+    }
+
+    #numIdeasCount {
+        float: left;
+        margin-left: 32px;
+        font-size: 200%;
+    }
+
+    #numContributions {
+        float: right;
+        margin-right: 5px;
+    }
+
+    #numContributionsCount {
+        float: right;
+        margin-right: 52px;
+        font-size: 200%;
+    }
+
 }

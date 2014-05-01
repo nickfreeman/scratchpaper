@@ -12,10 +12,9 @@
                   <%= image_tag(@idea.photo.url(:medium))%>
             </div>
         <% end %>
-        <div class="section contributors">
+        <div class="section contributors", id="contributors_section">
             <div class="contributor">
-                <!--CHANGE TO ACTUAL POSTER LINK -->
-                <%= link_to profile_index_path, :class => "contributor-profile-link" do %><%end%>
+                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
                 <div class="contributorImg">
                     <% if @idea.user.avatar.exists? %>
                         <%= image_tag(@idea.user.avatar.url(:medium))%>
@@ -28,31 +27,14 @@
                 </div>
             </div>
             <hr>
-            <% if @idea.contributors.size > 0 %>
-                <% @idea.contributors.each do |contributor| %>
-                    <div class="contributor">
-                        <!--CHANGE TO ACTUAL CONTRIBUTOR LINK -->
-                        <%= link_to profile_index_path, :class => "contributor-profile-link" do %><%end%>
-                        <div class="contributorImg">
-                            <% if contributor.user.avatar.exists? %>
-                                <%= image_tag(contributor.user.avatar.url(:medium))%>
-                            <% else %>
-                                <%= image_tag("default_pro_pic.jpg")%>
-                            <% end %>
-                        </div>
-                        <div class="contributorContent">
-                            <p><%= contributor.user.name %></p>
-                        </div>
-                    </div>
-                <% end %>
-            <% end %>
+            <%= render :partial => @idea.contributors %>
             <div class="contributorButton">
                 <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
-                    <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
+                    <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :'data-update-target' => 'contributors_section', :remote => true do %>
                         Add Me As A Contributor!
                     <% end %>
                 <% else %>
-                    <%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
+                    <%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :'data-update-target' => 'contributors_section', :remote => true do %>
                         Remove Me As A Contributor
                     <% end %>
                 <% end %>

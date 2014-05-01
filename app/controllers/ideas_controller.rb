@@ -81,16 +81,19 @@ class IdeasController < ApplicationController
     if not idea.contributors.exists?(:user => current_user)
         idea.contributors.create(:user => current_user, :idea => idea)
     end
-    redirect_to ideas_path
+    redirect_to :back
   end
 
   def uncontribute
     idea = Idea.find(params[:id])
+    @contributor = idea.contributors.where(:user => current_user).first
     if idea.contributors.exists?(:user => current_user)
-        contributor = idea.contributors.where(:user => current_user).first
-        contributor.destroy
+        @contributor.destroy
     end
-    redirect_to ideas_path
+    respond_to do |format|
+        format.html{ redirect_to :back }
+        format.js
+    end
   end
 
   private
