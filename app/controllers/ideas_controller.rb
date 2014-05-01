@@ -47,7 +47,7 @@ class IdeasController < ApplicationController
   def update
     respond_to do |format|
       if @idea.update(idea_params)
-        format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
+        format.html { redirect_to @idea } #, notice: 'Idea was successfully updated.'
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

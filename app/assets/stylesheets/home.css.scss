@@ -280,7 +280,6 @@ textarea {
 	position: relative;
 	border-color: #ccc;
 	padding: 5px;
-	height: 50px;
 }
 
 #edit-problem {
@@ -316,6 +315,22 @@ textarea {
 	border-style: none;
 	background: #eee;	
 	width: 50px;
+}
+
+#edit-idea-done-wrapper {
+  	margin-right: auto;
+  	margin-left: auto;
+}
+  
+#edit-idea-done-button {
+  		display: inline-block;
+	width: 230px;
+	margin: 5px;
+}
+#edit-idea-button {
+	display: inline-block;
+	width: 230px;
+	margin: 5px;
 }
 
 .contributor-profile-link {
