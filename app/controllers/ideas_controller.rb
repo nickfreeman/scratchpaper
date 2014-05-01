@@ -79,9 +79,12 @@ class IdeasController < ApplicationController
   def contribute
     idea = Idea.find(params[:id])
     if not idea.contributors.exists?(:user => current_user)
-        idea.contributors.create(:user => current_user, :idea => idea)
+        @contributor = idea.contributors.create(:user => current_user, :idea => idea)
     end
-    redirect_to :back
+    respond_to do |format|
+        format.html{ redirect_to :back }
+        format.js
+    end
   end
 
   def uncontribute
