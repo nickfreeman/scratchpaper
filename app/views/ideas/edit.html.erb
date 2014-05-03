@@ -8,11 +8,14 @@
 <%= form_for @idea, url: {action: "update"} do |f| %>
 <div id="mainContainer">
     <div id="sideBarColumn">
-        <% if @idea.photo.exists? %>
+        
             <div class="section coverPhoto">
+            	<% if @idea.photo.exists? %>
                   <%= image_tag(@idea.photo.url(:medium))%>
+                <% else %>
+                  <%= image_tag("default_pro_pic.jpg") %>
+                <% end %>
             </div>
-        <% end %>
         <div class="section contributors">
             <div class="contributor">
                 <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
