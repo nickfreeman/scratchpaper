@@ -14,6 +14,8 @@
         <% end %>
         <div class="section contributors", id="contributors_section">
             <div class="contributor">
+                <h1> Creator </h1>
+                <hr>
                 <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
                 <div class="contributorImg">
                     <% if @idea.user.avatar.exists? %>
@@ -26,8 +28,9 @@
                     <p><%= @idea.user.name %></p>
                 </div>
             </div>
-            <hr>
             <div id="contributor_list">
+                <h1> Contributors </h1>
+                <hr>
                 <%= render :partial => @idea.contributors %>
             </div>
             <div class="contributorButton", id="contributorButton">
@@ -124,7 +127,6 @@
                 <% @idea.updates.reverse.each do |update| %>
                     <div class="updates tick">
                         <% user = update.contributor.user %>
-                        <%= link_to profile_path(user.id), :class => "contributor-profile-link" do %><%end%>
                         <div class="contributorImg">
                             <% if user.avatar.exists? %>
                                 <%= image_tag(user.avatar.url(:medium))%>

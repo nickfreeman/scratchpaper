@@ -48,6 +48,7 @@
 .section.contributors {
     width: 230px;
     height: 50%;
+    padding-top: 7px;
 }
 
 .section.updates {
@@ -70,12 +71,12 @@
 
 .updates {
     .title {
-        font-size: 15px;
+        font-size: 18px;
         margin-bottom: 5px;
     }
 
     .ticks {
-        max-height: 200px;
+        max-height: 400px;
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -92,6 +93,13 @@
     max-height: 200px;
     overflow-y: scroll;
     overflow-x: hidden;
+    width: 190px;
+
+    h1 {
+      font-size: 18px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
 }
 
 .update_input {
@@ -138,6 +146,12 @@
   height: 50px;
   font-size: 12px;
   margin-bottom: 10px;
+
+  h1 {
+      font-size: 18px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
 }
 
 hr {
