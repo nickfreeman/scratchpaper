@@ -44,6 +44,13 @@
     height: 50%;
 }
 
+.section.updates {
+    width: 230px;
+    height: 50%;
+    font-size: 12px;
+    padding-top: 7px;
+}
+
 .section.blurb {
     width: 540px;
     height: 100%;
@@ -53,6 +60,40 @@
 .section.description {
     width: 540px;
     height: 100%;
+}
+
+.updates {
+    .title {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .tick {
+      width: 190px;
+      height: 50px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+}
+
+.update_input {
+    width: 540px;
+    height: 100%;
+    margin: 5px;
+}
+
+#update_input_post_button {
+	border-top-left-radius:0px;
+	border-top-right-radius:3px;
+	border-bottom-right-radius:3px;
+	border-bottom-left-radius:0px;
+	border-right: none;
+	border-left: none;
+}
+
+#update_input_field {
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
 }
 
 .question {
@@ -180,6 +221,10 @@ hr {
   }
 
   .section.contributors {
+      width: 100%;
+  }
+
+  .section.updates {
       width: 100%;
   }
 

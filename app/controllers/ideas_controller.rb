@@ -76,6 +76,13 @@ class IdeasController < ApplicationController
     redirect_to ideas_path
   end
 
+  def create_update
+      @idea = Idea.find(params["id"])
+      @contributor = @idea.contributors.where(:user => current_user).first
+      @idea.updates.create(:description => params["update"]["description"], :idea => @idea, :contributor => @contributor)
+      redirect_to :back
+  end
+
   def contribute
     @idea = Idea.find(params[:id])
     if not @idea.contributors.exists?(:user => current_user)

@@ -12,4 +12,5 @@ Idealy::Application.routes.draw do
 
   resources :profile
 
+  post '/ideas/create_update'=> 'ideas#create_update', via: 'post', as: :create_update
 end
