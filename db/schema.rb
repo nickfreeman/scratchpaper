@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422045340) do
+ActiveRecord::Schema.define(version: 20140504003820) do
 
   create_table "attachments", force: true do |t|
     t.integer  "idea_id"
@@ -70,6 +70,17 @@ ActiveRecord::Schema.define(version: 20140422045340) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "updates", force: true do |t|
+    t.integer  "contributor_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "idea_id"
+  end
+
+  add_index "updates", ["contributor_id"], name: "index_updates_on_contributor_id"
+  add_index "updates", ["idea_id"], name: "index_updates_on_idea_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -38,6 +38,12 @@
                 <% end %>
             </div>
         </div>
+        <div id="contributions">
+            <% @idea.updates.each do |update| %>
+                <%= update.description %>
+            <% end %>
+        </div>
+
         <%= link_to "Edit Idea", edit_idea_path(:idea => @idea.id) %>
     </div>
     <div id="contentColumn">

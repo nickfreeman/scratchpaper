@@ -45,7 +45,6 @@
                   <% range = (i*50-1).downto((i-1)*50) %>
               <% end %>
               <% range.each do |j| %>
-                <%= puts(j) %>
                 <% idea = @ideas[j] %>
                 <% if idea.photo.exists? %>
                   <% photoExists = true %>
