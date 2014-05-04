@@ -209,6 +209,187 @@ hr {
   font-size: 10px;
 }
 
+#imagelightbox
+{
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    z-index: 9999;
+    box-shadow: 0px 0px 3.125em rgba(0, 0, 0, 0.75);
+}
+
+img {
+    vertical-align: middle;
+}
+
+#new-idea {
+  background: white;
+  padding: 25px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px; 
+  border-radius: 4px;
+  padding-bottom: 15px;
+  border-style: solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-width: 1px;
+}
+
+#new-idea-cover-photo {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#cover-photo-file-field {
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  left: 15px;
+  top: 15px;
+}
+
+#add-cover-photo-img {
+  width: 50%;
+}
+
+#edit-cover-photo-wrapper {
+  width: 30px;
+  background: white;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+#edit-cover-photo {
+  width: 30px;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+#new-idea-buttons {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  height: 25px;
+}
+
+.new-idea-button {
+  width: 95px;
+  height: 25px;
+  background: #eee;
+  float: left;
+  position: relative;
+}
+
+.new-idea-button.right {
+  float: right;
+}
+
+#edit-blurb {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  position: relative;
+  border-color: #ccc;
+  padding: 5px;
+}
+
+#edit-problem {
+  width: 100%;
+  border-style: none;
+  height: 120px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  padding: 5px;
+  scroll-top: 0;
+}
+
+#edit-solution {
+  width: 100%;
+  border-style: none;
+  height: 120px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  padding: 5px;
+}
+
+
+.section.no-media {
+  width: 540px;
+  p {
+    width: 400px;
+    margin: 0px;
+    float: left;
+  }
+}
+
+#add-media-button-wrapper {
+  width: 90px;
+  height: 20px;
+  float: right;
+  position: relative;
+  background: blue;
+
+
+}
+
+#add-media-button {
+  width: 167px;
+  height: 20px;
+  position: absolute;
+  left: -77px;
+  opacity: 0;
+}
+
+#new-idea-submit-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  width: 50px;
+}
+
+#new-idea-submit {
+  border-style: none;
+  background: #eee; 
+  width: 50px;
+}
+
+#edit-idea-done-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+}
+  
+#edit-idea-done-button {
+    display: inline-block;
+  width: 230px;
+  margin: 5px;
+}
+#edit-idea-button {
+  display: inline-block;
+  width: 230px;
+  margin: 5px;
+}
+
+.contributor-profile-link {
+  width: 190px;
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+
 @media screen and (max-width: 480px) {
   #sideBarColumn {
     width: 100%;
@@ -287,6 +468,7 @@ hr {
       height: 100%;
   }
 
+
   .section.comments {
     width: 100%;
     height: 100%;
@@ -338,6 +520,21 @@ hr {
   .contributingSince {
     font-size: 10px;
   }
+
+  #edit-idea-button {
+    display: inline-block;
+    width: 95%;
+    margin: 10px;
+    margin-top: 0px;
+  }
+
+  #edit-idea-done-button {
+    display: inline-block;
+    width: 95%;
+    margin: 10px;
+    margin-top: 0px;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -346,19 +543,3 @@ hr {
   }
 }
 
-#imagelightbox
-{
-    width: 300px;
-    height: 300px;
-    position: fixed;
-    z-index: 9999;
-    box-shadow: 0px 0px 3.125em rgba(0, 0, 0, 0.75);
-}
-
-img {
-    vertical-align: middle;
-}
-
-#edit-idea-button {
-  display: inline-block;
-}
