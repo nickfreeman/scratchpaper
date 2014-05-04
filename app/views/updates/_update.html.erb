@@ -1,0 +1,14 @@
+<%= div_for update do %>
+    <div class="updates tick">
+        <% user = update.contributor.user %>
+        <div class="contributorImg">
+            <% if user.avatar.exists? %>
+                <%= image_tag(user.avatar.url(:medium))%>
+            <% else %>
+                <%= image_tag("default_pro_pic.jpg")%>
+            <% end %>
+        </div>
+
+        <%= update.description %>
+    </div>
+<% end %>
