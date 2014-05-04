@@ -46,21 +46,23 @@
                 Updates Ticker
             </div>
             <hr>
-            <% @idea.updates.each do |update| %>
-                <div class="updates tick">
-                    <% user = update.contributor.user %>
-                    <%= link_to profile_path(user.id), :class => "contributor-profile-link" do %><%end%>
-                    <div class="contributorImg">
-                        <% if user.avatar.exists? %>
-                            <%= image_tag(user.avatar.url(:medium))%>
-                        <% else %>
-                            <%= image_tag("default_pro_pic.jpg")%>
-                        <% end %>
-                    </div>
+            <div class="updates ticks">
+                <% @idea.updates.reverse.each do |update| %>
+                    <div class="updates tick">
+                        <% user = update.contributor.user %>
+                        <%= link_to profile_path(user.id), :class => "contributor-profile-link" do %><%end%>
+                        <div class="contributorImg">
+                            <% if user.avatar.exists? %>
+                                <%= image_tag(user.avatar.url(:medium))%>
+                            <% else %>
+                                <%= image_tag("default_pro_pic.jpg")%>
+                            <% end %>
+                        </div>
 
-                    <%= update.description %>
-                </div>
-            <% end %>
+                        <%= update.description %>
+                    </div>
+                <% end %>
+            </div>
         </div>
     </div>
     <div id="contentColumn">
