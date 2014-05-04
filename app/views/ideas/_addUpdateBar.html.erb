@@ -1,8 +1,10 @@
-<%= form_for Update.new, :url => { :action => "create_update", :id => @idea.id }, :html => { :multipart => true } do |f| %>
-  <div class="input-group input-group-lg">
-      <%= f.text_field :description, :class => "form-control",  :autocomplete => "off", :placeholder => "You're a contributor! What's your latest update?", :id => "update_input_field" %>
-      <div class="input-group-btn">
-          <%= f.submit "post", :class => "btn btn-default", :id => "update_input_post_button", :tabindex => "-1" %>
+<div class="update_bar">
+    <%= form_for Update.new, :url => { :action => "create_update", :id => @idea.id }, :html => { :multipart => true } do |f| %>
+      <div class="input-group input-group-lg">
+          <%= f.text_field :description, :class => "form-control",  :autocomplete => "off", :placeholder => "You're a contributor! What's your latest update?", :id => "update_input_field" %>
+          <div class="input-group-btn">
+              <%= f.submit "post", :class => "btn btn-default", :id => "update_input_post_button", :tabindex => "-1" %>
+          </div>
       </div>
-  </div>
-<% end %>
+    <% end %>
+</div>
