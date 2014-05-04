@@ -50,6 +50,18 @@ $(function(){
      });
     });
 
+    $(".updates.description").click(function(){
+        var updates_tick = document.getElementsByClassName("updates tick")[0];
+        var updates_desc = document.getElementsByClassName("updates description")[0];
+        if (updates_tick.style["maxHeight"] == "50px") {
+            updates_tick.style["maxHeight"]="500px";
+            updates_desc.style["maxHeight"]="500px";
+        } else {
+            updates_tick.style["maxHeight"]="50px";
+            updates_desc.style["maxHeight"]="50px";
+        }
+    });
+
     //$('a').imageLightbox();
 
     //$( selector ).imageLightbox(
