@@ -44,7 +44,7 @@
             <% end %>
         </div>
 
-        <%= link_to "Edit Idea", edit_idea_path(:idea => @idea.id) %>
+        <%= link_to edit_idea_path(:idea => @idea.id), :id => "edit-idea-button", :class => "btn btn-default btn-block", :type => "button" do %>Edit Idea<% end %>
     </div>
     <div id="contentColumn">
         <div class="section blurb">
