@@ -50,12 +50,6 @@
         <% end %>
     </div>
     <div id="contentColumn">
-        <div class="update_input">
-            <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size != 0 %>
-                <%= render 'addUpdateBar' %>
-            <% end %>
-        </div>
-
         <div class="section blurb">
             "<%= @idea.blurb %>"
         </div>
@@ -92,6 +86,9 @@
                     </ul>
                 </div>
             </div>
+            <script>
+                $('a').imageLightbox();
+            </script>
         <% end %>
 
         <div class="section comments">
@@ -114,6 +111,11 @@
         </div>
     </div>
     <div id="updatesColumn">
+        <div class="update_input">
+            <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size != 0 %>
+                <%= render 'addUpdateBar' %>
+            <% end %>
+        </div>
         <div class="section updates">
             <div class="updates title">
                 Updates Ticker
