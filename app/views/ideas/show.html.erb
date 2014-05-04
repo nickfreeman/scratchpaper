@@ -57,25 +57,25 @@
         </div>
 
         <% if (@idea.problem && @idea.problem.length != 0) || (@idea.solution && @idea.problem.length != 0)%>
-        <div class="section description">
-            <% if @idea.problem && @idea.problem.length != 0 %>
-            <p class="question">
-                What is the problem?
-            </p>
-            <p class="answer">
-                <%= @idea.problem %>
-            </p>
-            <% end %>
-            <% if @idea.solution && @idea.solution.length != 0%>
-            <p class="question">
-                How do you want to solve it?
-            </p>
-            <p class="answer">
-                <%= @idea.solution %>
-            </p>
-            <% end %>
-            <% end %>
-        </div>
+            <div class="section description">
+                <% if @idea.problem && @idea.problem.length != 0 %>
+                <p class="question">
+                    What is the problem?
+                </p>
+                <p class="answer">
+                    <%= @idea.problem %>
+                </p>
+                <% end %>
+                <% if @idea.solution && @idea.solution.length != 0%>
+                <p class="question">
+                    How do you want to solve it?
+                </p>
+                <p class="answer">
+                    <%= @idea.solution %>
+                </p>
+                <% end %>
+            </div>
+        <% end %>
 
 
         <% if @idea.attachments.count != 0 %>
