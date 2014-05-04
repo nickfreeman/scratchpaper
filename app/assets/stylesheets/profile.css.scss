@@ -55,6 +55,36 @@
 	margin-right: 50px;
 }
 
+#profile-photo-file-field {
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+}
+
+#edit-profile-photo-wrapper {
+  width: 30px;
+  background: white;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+#edit-profile-photo {
+  width: 30px;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+#edit-profile-done-button {
+  display: inline-block;
+  width: 100px;
+  margin-top: -60px;
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 480px) {
     #profileSummary {
         width: 95%;
