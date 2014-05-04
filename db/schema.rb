@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504003820) do
+ActiveRecord::Schema.define(version: 20140504060707) do
 
   create_table "attachments", force: true do |t|
     t.integer  "idea_id"
@@ -77,10 +77,12 @@ ActiveRecord::Schema.define(version: 20140504003820) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "idea_id"
+    t.integer  "user_id"
   end
 
   add_index "updates", ["contributor_id"], name: "index_updates_on_contributor_id"
   add_index "updates", ["idea_id"], name: "index_updates_on_idea_id"
+  add_index "updates", ["user_id"], name: "index_updates_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

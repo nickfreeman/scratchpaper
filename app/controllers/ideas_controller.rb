@@ -79,7 +79,7 @@ class IdeasController < ApplicationController
   def create_update
       @idea = Idea.find(params["id"])
       @contributor = @idea.contributors.where(:user => current_user).first
-      @idea.updates.create(:description => params["update"]["description"], :idea => @idea, :contributor => @contributor)
+      @idea.updates.create(:description => params["update"]["description"], :idea => @idea, :contributor => @contributor, :user => current_user)
       redirect_to :back
   end
 
