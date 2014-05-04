@@ -1,4 +1,4 @@
-$('a').imageLightbox();
+//$('a').imageLightbox();
 
 //$( selector ).imageLightbox(
 //    {
