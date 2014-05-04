@@ -1,16 +1,22 @@
 #mainContainer {
-  width: 800px;
+  width: 1050px;
   margin: auto;
 }
 
 #sideBarColumn {
-  width: 30%;
+  width: 240px;
   height: 100%;
   float: left;
 }
 
 #contentColumn {
-  width: 70%;
+  width: 550px;
+  height: 100%;
+  float: left;
+}
+
+#updatesColumn {
+  width: 240px;
   height: 100%;
   float: left;
 }
@@ -214,6 +220,12 @@ hr {
   }
 
   #contentColumn {
+    width: 100%;
+    height: 100%;
+    float: left;
+  }
+
+  #updatesColumn {
     width: 100%;
     height: 100%;
     float: left;
