@@ -1,6 +1,6 @@
 <%= div_for contributor do %>
     <div class="contributor", id='contributor_<%= contributor.id %>'>
-        <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
+        <%= link_to profile_path(contributor.user_id), :class => "contributor-profile-link" do %><%end%>
         <div class="contributorImg">
             <% if contributor.user.avatar.exists? %>
                 <%= link_to image_tag(contributor.user.avatar.url(:medium)), profile_path(@idea.user_id) %>
