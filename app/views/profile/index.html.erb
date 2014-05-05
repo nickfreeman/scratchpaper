@@ -3,6 +3,7 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
 </head>
 
+<%= form_for @user, :url => { :action => "update", :controller => "profile", :id => @user.id }, :html => { :multipart => true } do |f| %>
 <div id="profileAbout">
 	<div id="profileSummary">
         <div id="profileImg">
@@ -11,6 +12,11 @@
             <% else %>
                 <%= image_tag("default_pro_pic.jpg", :id => "profileImg") %>
             <% end %>
+            <%= f.file_field :avatar, id: "profile-photo-file-field" %>
+            <div id="edit-profile-photo-wrapper">
+                <%= image_tag "edit.png", id: "edit-profile-photo"%>
+            </div>
+            <%= f.submit "Done Editing", id: "edit-profile-done-button", :class => "btn btn-default btn-block" %>
 		</div>
 		<div id="profileName">
 			<h1><%= @user.name %></h1>
@@ -33,6 +39,7 @@
     </div>
 	</div>
 </div>
+<% end %>
 
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">

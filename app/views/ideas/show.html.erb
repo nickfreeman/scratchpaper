@@ -10,6 +10,7 @@
         <% if @idea.photo.exists? %>
             <div class="section coverPhoto">
                   <%= image_tag(@idea.photo.url(:medium))%>
+                  <!--<%= link_to image_tag(@idea.photo.url(:medium)), @idea.photo.url() , :data => {:imagelightbox => "a"}%> -->
             </div>
         <% end %>
         <div class="section contributors", id="contributors_section">
@@ -33,6 +34,7 @@
                 <hr>
                 <%= render :partial => @idea.contributors %>
             </div>
+            <% if (@idea.user_id != current_user.id) %>
             <div class="contributorButton", id="contributorButton">
                 <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
                     <%= render 'addContributorButton' %>
@@ -40,10 +42,12 @@
                     <%= render 'removeContributorButton' %>
                 <% end %>
             </div>
+            <% end %>
         </div>
 
-        <%= link_to edit_idea_path(:idea => @idea.id), :id => "edit-idea-button", :class => "btn btn-default btn-block", :type => "button" do %>Edit Idea<% end %>
-
+        <% if (@idea.user_id == current_user.id) %>
+            <%= link_to edit_idea_path(:idea => @idea.id), :id => "edit-idea-button", :class => "btn btn-default btn-block", :type => "button" do %>Edit Idea<% end %>
+        <% end %>
     </div>
     <div id="contentColumn">
         <div class="section blurb">

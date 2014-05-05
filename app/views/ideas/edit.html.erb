@@ -15,14 +15,18 @@
                 <% else %>
                   <%= image_tag("default_pro_pic.jpg") %>
                 <% end %>
+                <%= f.file_field :photo, id: "cover-photo-file-field" %>
+                <div id="edit-cover-photo-wrapper">
+                    <%= image_tag "edit.png", id: "edit-cover-photo"%>
+                </div>
             </div>
-        <div class="section contributors">
+        <div class="section contributors", id="contributors_section">
             <div class="contributor">
-                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
+                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %>Update Cover Photo<%end%>
                 <div class="contributorImg">
                     <% if @idea.user.avatar.exists? %>
                         <%= image_tag(@idea.user.avatar.url(:medium))%>
-                    <% else %>
+                    <% else %>s
                         <%= image_tag("default_pro_pic.jpg")%>
                     <% end %>
                 </div>
@@ -31,38 +35,15 @@
                 </div>
             </div>
             <hr>
-            <% if @idea.contributors.size > 0 %>
-                <% @idea.contributors.each do |contributor| %>
-                    <div class="contributor">
-                        <%= link_to profile_path(contributor.user_id), :class => "contributor-profile-link" do %><%end%>
-                        <div class="contributorImg">
-                            <% if contributor.user.avatar.exists? %>
-                                <%= image_tag(contributor.user.avatar.url(:medium))%>
-                            <% else %>
-                                <%= image_tag("default_pro_pic.jpg")%>
-                            <% end %>
-                        </div>
-                        <div class="contributorContent">
-                            <p><%= contributor.user.name %></p>
-                        </div>
-                    </div>
-                <% end %>
-            <% end %>
-            <div class="contributorButton">
-                <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
-                    <%= link_to contribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
-                        Add Me As A Contributor!
-                    <% end %>
-                <% else %>
-                    <%= link_to uncontribute_path(:idea => @idea.id), :class => "btn btn-default btn-block", :type => "button", :remote => true, :id => @idea.id, :method => :put, :onclick => "window.location.reload()" do %>
-                        Remove Me As A Contributor
-                    <% end %>
-                <% end %>
+            <div id="contributor_list">
+                <%= render :partial => @idea.contributors %>
             </div>
+            
         </div>
+
         <div id="edit-idea-done-wrapper">
-        <%= f.submit "Done", id: "edit-idea-done-button", :class => "btn btn-default btn-block" %>
-      </div>
+            <%= f.submit "Done Editing", id: "edit-idea-done-button", :class => "btn btn-default btn-block" %>
+        </div>
     </div>
     <div id="contentColumn">
         <div class="section blurb">
@@ -87,14 +68,29 @@
 
         <% if @idea.attachments.count != 0 %>
             <div class="section media">
+                <%= file_field_tag('idea_attachments_attach', id: "edit-media-file-field", multiple: true, name: "idea[attachments_attributes][][attach]") %>
+                <div id="edit-media-wrapper">
+                    <%= image_tag "edit.png", id: "edit-media"%>
+                </div>
                 <div class="flexslider">
                     <ul class="slides">
                         <% @idea.attachments.each do |img| %>
                             <li><%= link_to image_tag(img.attach.url(:medium)), img.attach.url(), :data => {:imagelightbox=>"a"} %></li>
                         <% end %>
-                    </ul>
+                    </ul>   
                 </div>
             </div>
+            <script>
+                $('a').imageLightbox();
+            </script>
+        <% else %>
+            <div class="section no-media">
+                <p>How will it look?  Add photos or sketches...</p> 
+                <%= file_field_tag('idea_attachments_attach', id: "add-media-button-file-field", multiple: true, name: "idea[attachments_attributes][][attach]") %>
+                <div id="add-media-button-wrapper">
+                    <%= image_tag "edit.png", id: "add-media-button"%>
+                </div>
+            </div >
         <% end %>
 
         <div class="section comments">
@@ -115,23 +111,31 @@
               <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
             </div>
         </div>
+
+
+    </div>
+
+    <div id="updatesColumn">
+        <div class="update_input">
+            <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size != 0 %>
+                <%= render 'addUpdateBar' %>
+            <% end %>
+        </div>
+        <div class="section updates">
+            <div class="updates title">
+                Updates Ticker
+            </div>
+            <hr>
+            <div class="updates ticks">
+                <%= render :partial => @idea.updates.reverse %>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="/assets/show.js" ></script>
 </div>
 
-
-
-
-
-  <% end %>
-
-
-
-
+<% end %>
 
 </div>
 
-
-
 <p id="notice"><%= notice %></p>
-
