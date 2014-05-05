@@ -20,3 +20,4 @@
 //= require masonry/modernizr-transitions
 //= require jquery.flexslider-min
 //= require imagelightbox
+//= require jquery.dotdotdot.min

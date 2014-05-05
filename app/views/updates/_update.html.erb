@@ -1,6 +1,6 @@
 <%= div_for update do %>
-    <div class="updates tick">
-        <% user = update.user %>
+    <% user = update.user %>
+    <div class="updates tick <%= update.id %>">
         <div class="contributorImg">
             <% if user.avatar.exists? %>
                 <%= image_tag(user.avatar.url(:medium))%>
@@ -8,8 +8,8 @@
                 <%= image_tag("default_pro_pic.jpg")%>
             <% end %>
         </div>
-        <div class="updates description">
-            <%= update.description %>
+        <div class="updates description <%= update.id %>", onclick="expandTick(<%= update.id %>)">
+            <p><%= update.description %></p>
         </div>
     </div>
 <% end %>

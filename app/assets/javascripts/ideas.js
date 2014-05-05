@@ -38,28 +38,20 @@ $(function(){
     });
 
     $(window).load(function(){
-     $('.flexslider').flexslider({
-         animation: "slide",
-         animationLoop: true,
-         itemWidth: 210,
-         itemMargin: 20,
-         mousewheel: false,
-         controlNav: false,
-         keyboard: false,
-         slideshow: false,
-     });
+        $('.flexslider').flexslider({
+            animation: "slide",
+            animationLoop: true,
+            itemWidth: 210,
+            itemMargin: 20,
+            mousewheel: false,
+            controlNav: false,
+            keyboard: false,
+            slideshow: false,
+        });
     });
 
-    $(".updates.description").click(function(){
-        var updates_tick = document.getElementsByClassName("updates tick")[0];
-        var updates_desc = document.getElementsByClassName("updates description")[0];
-        if (updates_tick.style["maxHeight"] == "50px") {
-            updates_tick.style["maxHeight"]="500px";
-            updates_desc.style["maxHeight"]="500px";
-        } else {
-            updates_tick.style["maxHeight"]="50px";
-            updates_desc.style["maxHeight"]="50px";
-        }
+    $(window).bind('load', function() {
+        $(".updates.description").dotdotdot();
     });
 
     //$('a').imageLightbox();
@@ -230,3 +222,21 @@ jQuery(document).ready(function($) {
     $('#idea_blurb').keyup(updateCountdown);
   }
 });
+
+function expandTick(updateid){
+    var updates_tick = document.getElementsByClassName("updates tick " + updateid)[0];
+    var updates_desc = document.getElementsByClassName("updates description " + updateid)[0];
+    if (updates_tick.style["maxHeight"] == "50px") {
+        var content = $(".updates.description").triggerHandler("originalContent");
+        $(".updates.description." + updateid + ".p").append(content);
+        $(".updates.description." + updateid).trigger("destroy");
+        updates_tick.style["maxHeight"]="500px";
+        updates_desc.style["maxHeight"]="500px";
+    } else {
+        updates_tick.style["maxHeight"]="50px";
+        updates_desc.style["maxHeight"]="50px";
+        $(".updates.description." + updateid).dotdotdot();
+    }
+};
+
+
