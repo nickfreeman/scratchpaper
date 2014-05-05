@@ -3,7 +3,7 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
 </head>
 
-<%= form_for @user, :html => { :multipart => true } do |f| %>
+<%= form_for @user, :url => { :action => "update", :controller => "profile", :id => @user.id }, :html => { :multipart => true } do |f| %>
 <div id="profileAbout">
 	<div id="profileSummary">
         <div id="profileImg">

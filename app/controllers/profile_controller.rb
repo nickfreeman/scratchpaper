@@ -11,10 +11,17 @@ class ProfileController < ApplicationController
 
   def update
   	@user = current_user
-    if @user.update_attributes(params[:avatar])
+    if @user.update(profile_params)
       redirect_to profile_index_path, :notice => "Profile updated."
     else
       redirect_to profile_index_path, :alert => "Unable to update profile."
     end
   end
+
+  private
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def profile_params
+      params.require(:user).permit(:avatar)
+    end
 end

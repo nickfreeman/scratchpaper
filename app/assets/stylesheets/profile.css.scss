@@ -14,6 +14,7 @@
 }
 
 #profileImg {
+    position: relative;
 	width: 100px;
 	height: 100px;
     margin-right: 1em;
@@ -68,12 +69,15 @@
 #edit-profile-photo-wrapper {
   width: 30px;
   background: white;
+  position: absolute;
+  top: 6px;
+  right: 6px;
   border-radius: 2px;
   opacity: 0.7;
 }
 
 #edit-profile-photo {
-  width: 30px;
+  width: 25px;
   border-radius: 2px;
   opacity: 0.6;
 }
