@@ -226,7 +226,7 @@ jQuery(document).ready(function($) {
 function expandTick(updateid){
     var updates_tick = document.getElementsByClassName("updates tick " + updateid)[0];
     var updates_desc = document.getElementsByClassName("updates description " + updateid)[0];
-    if (updates_tick.style["maxHeight"] == "50px") {
+    if (updates_tick.style["maxHeight"] == "50px" || updates_tick.style["maxHeight"] == "") { // TODO fix this max-height hack
         var content = $(".updates.description").triggerHandler("originalContent");
         $(".updates.description." + updateid + ".p").append(content);
         $(".updates.description." + updateid).trigger("destroy");

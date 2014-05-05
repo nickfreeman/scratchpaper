@@ -79,6 +79,10 @@
         max-height: 400px;
         overflow-y: scroll;
         overflow-x: hidden;
+
+        hr {
+            margin-top: 10px;
+        }
     }
 
     .tick {
@@ -198,7 +202,7 @@ hr {
     height: 210px;
 }
 
-.flexslider{
+.flexslider {
     background:none;
     border:none;
     box-shadow:none;
@@ -216,6 +220,15 @@ hr {
 
 .contributingSince {
   font-size: 10px;
+}
+
+.userIDBox {
+  width: 100%;
+  float: bottom;
+
+  p {
+      margin: 0px;
+  }
 }
 
 @media screen and (max-width: 480px) {
