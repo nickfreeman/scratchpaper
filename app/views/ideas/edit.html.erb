@@ -68,6 +68,10 @@
 
         <% if @idea.attachments.count != 0 %>
             <div class="section media">
+                <%= file_field_tag('idea_attachments_attach', id: "edit-media-file-field", multiple: true, name: "idea[attachments_attributes][][attach]") %>
+                <div id="edit-media-wrapper">
+                    <%= image_tag "edit.png", id: "edit-media"%>
+                </div>
                 <div class="flexslider">
                     <ul class="slides">
                         <% @idea.attachments.each do |img| %>
@@ -82,8 +86,9 @@
         <% else %>
             <div class="section no-media">
                 <p>How will it look?  Add photos or sketches...</p> 
-                <div id = "add-media-button-wrapper">
-                    <%= file_field_tag('idea_attachments_attach', id: "add-media-button", multiple: true, name: "idea[attachments_attributes][][attach]") %>
+                <%= file_field_tag('idea_attachments_attach', id: "add-media-button-file-field", multiple: true, name: "idea[attachments_attributes][][attach]") %>
+                <div id="add-media-button-wrapper">
+                    <%= image_tag "edit.png", id: "add-media-button"%>
                 </div>
             </div >
         <% end %>
@@ -104,6 +109,25 @@
               </script>
               <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
               <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="updatesColumn">
+        <div class="update_input">
+            <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size != 0 %>
+                <%= render 'addUpdateBar' %>
+            <% end %>
+        </div>
+        <div class="section updates">
+            <div class="updates title">
+                Updates Ticker
+            </div>
+            <hr>
+            <div class="updates ticks">
+                <%= render :partial => @idea.updates.reverse %>
             </div>
         </div>
     </div>

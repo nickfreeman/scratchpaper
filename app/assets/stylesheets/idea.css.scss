@@ -338,22 +338,68 @@ img {
   }
 }
 
+#add-media-button-file-field {
+  opacity: 0;
+  width: 125px;
+  height: 30px;
+  z-index: 3;
+  position: absolute;
+  cursor: pointer;
+  right: 12px;
+  top: 12px;
+}
+
 #add-media-button-wrapper {
-  width: 90px;
-  height: 20px;
-  float: right;
-  position: relative;
-  background: blue;
-
-
+  width: 30px;
+  height: 30px;
+  background: white;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 2px;
+  opacity: 0.7;
+  z-index: 1;
 }
 
 #add-media-button {
-  width: 167px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.6;
+  z-index: 2;
+  border-style: solid;
+  border-color: #aaa;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+#edit-media-wrapper {
+  width: 30px;
+  height: 30px;
+  background: white;
   position: absolute;
-  left: -77px;
+  top: 25px;
+  right: 25px;
+  border-radius: 2px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+#edit-media {
+  width: 30px;
+  border-radius: 2px;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+#edit-media-file-field {
   opacity: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  position: absolute;
+  cursor: pointer;
+  right: 25px;
+  top: 25px;
 }
 
 #new-idea-submit-wrapper {
