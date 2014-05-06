@@ -1,12 +1,13 @@
 <%= div_for update do %>
     <% user = update.user %>
+    <hr>
     <div class="updates tick <%= update.id %>">
+        <div class="updates userIDBox">
+            <p><%= link_to user.name, profile_path(user.id), :class => "username_link" %> &#160; - &#160; <%= time_ago_in_words(update.created_at) %></p>
+        </div>
+
         <div class="updates description <%= update.id %>", onclick="expandTick(<%= update.id %>)">
             <p><%= update.description %></p>
         </div>
-        <div class="userIDBox">
-            <p>-<%= user.name %> &#160; at &#160; <%= update.created_at.strftime("%I:%M - %d %b %Y") %></p>
-        </div>
     </div>
-    <hr>
 <% end %>

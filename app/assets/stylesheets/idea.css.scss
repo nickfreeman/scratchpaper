@@ -72,11 +72,11 @@
 .updates {
     .title {
         font-size: 15px;
-        margin-bottom: 5px;
+        margin-top: 5px;
     }
 
     .ticks {
-        max-height: 400px;
+        max-height: 250px;
         overflow-y: scroll;
         overflow-x: hidden;
 
@@ -90,12 +90,37 @@
         min-height: 50px;
         max-height: 50px;
         font-size: 12px;
-        margin-bottom: 10px;
     }
 
     .description {
         max-height: 50px;
         overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .userIDBox {
+      width: 100%;
+      float: bottom;
+      position: relative;
+      margin-bottom: 5px;
+
+      p {
+          margin: 0px;
+      }
+    }
+
+}
+
+.input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .input-group-lg > .input-group-btn > .submit, .authform .input-group-lg > .input-group-btn > .button, .input-group-lg > .input-group-btn > .button-xs {
+    font-size: 14px;
+}
+
+.username_link {
+    font-weight: normal;
+    color: #000;
+    &:hover {
+        color: #000;
+        text-decoration: none;
     }
 }
 
@@ -222,14 +247,7 @@ hr {
   font-size: 10px;
 }
 
-.userIDBox {
-  width: 100%;
-  float: bottom;
 
-  p {
-      margin: 0px;
-  }
-}
 
 #imagelightbox
 {
@@ -251,7 +269,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   border-radius: 4px;
   padding-bottom: 15px;
   border-style: solid;
@@ -429,7 +447,7 @@ img {
 
 #new-idea-submit {
   border-style: none;
-  background: #eee; 
+  background: #eee;
   width: 50px;
 }
 
@@ -437,7 +455,7 @@ img {
     margin-right: auto;
     margin-left: auto;
 }
-  
+
 #edit-idea-done-button {
   display: inline-block;
   width: 230px;
