@@ -85,13 +85,19 @@ textarea {
 
 @media screen and (max-width: 480px) {
 	.item {
-		font-size: 10px;
+		font-size: 14px;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	.body {
 		font-size: 12px;
+	}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+	.item {
+		font-size: 10px;
 	}
 }
 
