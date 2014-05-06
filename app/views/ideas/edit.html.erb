@@ -8,7 +8,7 @@
 <%= form_for @idea, url: {action: "update"} do |f| %>
 <div id="mainContainer">
     <div id="sideBarColumn">
-        
+
             <div class="section coverPhoto">
             	<% if @idea.photo.exists? %>
                   <%= image_tag(@idea.photo.url(:medium))%>
@@ -22,23 +22,34 @@
             </div>
         <div class="section contributors", id="contributors_section">
             <div class="contributor">
-                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %>Update Cover Photo<%end%>
+                <h1> Creator </h1>
+                <hr>
+                <%= link_to profile_path(@idea.user_id), :class => "contributor-profile-link" do %><%end%>
                 <div class="contributorImg">
                     <% if @idea.user.avatar.exists? %>
-                        <%= image_tag(@idea.user.avatar.url(:medium))%>
-                    <% else %>s
-                        <%= image_tag("default_pro_pic.jpg")%>
+                        <%= link_to image_tag(@idea.user.avatar.url(:medium)), profile_path(@idea.user_id) %>
+                    <% else %>
+                        <%= link_to image_tag("default_pro_pic.jpg"), profile_path(@idea.user_id)%>
                     <% end %>
                 </div>
                 <div class="contributorContent">
                     <p><%= @idea.user.name %></p>
                 </div>
             </div>
-            <hr>
             <div id="contributor_list">
+                <h1> Contributors </h1>
+                <hr>
                 <%= render :partial => @idea.contributors %>
             </div>
-            
+            <% if (@idea.user_id != current_user.id) %>
+            <div class="contributorButton", id="contributorButton">
+                <% if current_user.contributors.select {|o| @idea.contributors.include? o}.size == 0 %>
+                    <%= render 'addContributorButton' %>
+                <% else %>
+                    <%= render 'removeContributorButton' %>
+                <% end %>
+            </div>
+            <% end %>
         </div>
 
         <div id="edit-idea-done-wrapper">
@@ -64,7 +75,7 @@
                 <%= f.text_area :solution, id: "edit-solution", placeholder: "How do you want to solve it?", autocomplete: "off" %>
             </p>
         </div>
-    
+
 
         <% if @idea.attachments.count != 0 %>
             <div class="section media">
@@ -77,7 +88,7 @@
                         <% @idea.attachments.each do |img| %>
                             <li><%= link_to image_tag(img.attach.url(:medium)), img.attach.url(), :data => {:imagelightbox=>"a"} %></li>
                         <% end %>
-                    </ul>   
+                    </ul>
                 </div>
             </div>
             <script>
@@ -85,7 +96,7 @@
             </script>
         <% else %>
             <div class="section no-media">
-                <p>How will it look?  Add photos or sketches...</p> 
+                <p>How will it look?  Add photos or sketches...</p>
                 <%= file_field_tag('idea_attachments_attach', id: "add-media-button-file-field", multiple: true, name: "idea[attachments_attributes][][attach]") %>
                 <div id="add-media-button-wrapper">
                     <%= image_tag "edit.png", id: "add-media-button"%>
@@ -123,14 +134,21 @@
         </div>
         <div class="section updates">
             <div class="updates title">
-                Updates Ticker
+                Updates
             </div>
-            <hr>
             <div class="updates ticks">
-                <%= render :partial => @idea.updates.reverse %>
+                <% if @idea.updates.count != 0 %>
+                    <%= render :partial => @idea.updates.reverse %>
+                <% else %>
+                    <hr>
+                    <div class="updates tick">
+                       Nothing yet, check back soon!
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="/assets/show.js" ></script>
 </div>
 

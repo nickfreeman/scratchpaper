@@ -71,7 +71,17 @@ Idea.create(:blurb => "Wind turbines along highways and interstates", :problem =
 Idea.create(:blurb => "A website that tells you if you will need the assigned textbook for that class/professor", :problem => "Many university classes require thousands of dollars worth of textbooks.  Many students purchase many 'required' expensive textbooks to find out that some are simply never opened the entire semester, and must then resell a textbook that has lost most of it's value.", :solution => "A website where students specify their university, class, and professor and state for each of the required textbooks, if they actually used it.  If the student actually used the book they will rate how often and how necessary the book was.  The website will then display easy to read statistics to help a student determine which of the mandatory textbooks are actually needed and are useful.", :user => asaf_user)
 Idea.create(:blurb => "An app that automates electronic charting, giving doctors more time to spend helping patients", :user => nick_user)
 idea1 = Idea.create(:blurb => "Import a video, and see how the camera moved as the shot filmed, using a virtual person holding a camera.", :photo => File.open(File.join(Rails.root, 'app', 'assets', 'images', 'photography.jpg')), :problem => "We are currently unable to learn filming techniques without in-person training.  Many of my friend spend hundreds of dollars on lessons in cinamatogrphy, learning the best angles for the shots that we want to include in our films. Watching videos definitely helps to learn cinematography, but seeing what is done behind the camera for every shot would be very useful.", :solution => "I imagine a solution where a device can be added to a camera during a shot, and the motion is detected to recoginze the speed and direction of the camera's motion, as well as the ways it is tilted and turned. If this motion can then be translated into a virtual camera man which is doing the filming, it could help teach aspiring cinematographers the ways that very intricate shots are done.", :user => nick_user)
+idea1.attachments.create(:attach=>ext_imgArr[0])
+idea1.attachments.create(:attach=>ext_imgArr[1])
+idea1.attachments.create(:attach=>ext_imgArr[2])
+idea1.attachments.create(:attach=>ext_imgArr[3])
+idea1.attachments.create(:attach=>ext_imgArr[4])
+idea1.attachments.create(:attach=>ext_imgArr[5])
 contributor1 = idea1.contributors.create(user: asaf_user, idea: idea1)
+contributor2 = idea1.contributors.create(user: james_user, idea: idea1)
+idea1.updates.create(user: james_user, contributor: contributor2, idea: idea1, description: "Made proof of concept, the learning doesn't work very well yet")
 idea1.updates.create(user: asaf_user, contributor: contributor1, idea: idea1, description: "Initialized github repo")
+idea1.updates.create(user: asaf_user, contributor: contributor1, idea: idea1, description: "Prototype complete, there is still a lot of work to be done. Initial video demos are up on youtube, let us know what you think about v1!")
+idea1.updates.create(user: james_user, contributor: contributor2, idea: idea1, description: "New version up, has featues lacking in Asaf's version. You can try the new one out on github, this one will learn from your filming habits")
 
 
