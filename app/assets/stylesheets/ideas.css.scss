@@ -26,15 +26,20 @@
 #idea_blurb {
   border-right: none;
   border-left: none;
+  padding-right: 70px;
 }
 
 #new-idea-post-button {
-	border-top-left-radius:0px;
-	border-top-right-radius:0px;
-	border-bottom-right-radius:0px;
-	border-bottom-left-radius:0px;
-	border-right: none;
-	border-left: none;
+	border-radius: 4px;
+	border-style: solid;
+	border-widtk: 1px;
+	border-color: #ccc;
+	position: absolute;
+	right: 50px;
+	width: 50px;
+	height: 30px;
+	margin-top: 8px;
+	padding: 0px;
 }
 
 #new-idea-dropdown {

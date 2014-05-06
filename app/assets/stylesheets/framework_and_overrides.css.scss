@@ -94,7 +94,6 @@ input {
 
 
 .input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .input-group-lg > .input-group-btn > .submit, .authform .input-group-lg > .input-group-btn > .button, .input-group-lg > .input-group-btn > .button-xs {
-  height: 40px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -104,10 +103,6 @@ input {
       border-style: solid;
     border-color: #e5e6e9 #dfe0e4 #d0d1d5;
   border-width: 1px;
-}
-
-.input-group-addon {
-  height: 40px;
 }
 
 .well, .authform form, .authform fieldset {

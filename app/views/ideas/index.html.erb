@@ -8,7 +8,7 @@
 
   <div id="wrapper">
     <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-    <div id="newIdea">
+        <div id="newIdea">
     <div class="row">
       <div class="col-md-12">
           <%= form_for Idea.new, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
@@ -38,59 +38,51 @@
   </div>
       <!-- make sure this only fetches necessary fields for each idea rather than all ideas and selecting fields after -->
       <div id="all-ideas">
-          <% (@ideas.count/50).downto(1).each do |i| %>
-              <% if i == @ideas.count/50 %>
-                  <% range = (@ideas.count-1).downto((i-1)*50) %>
-              <% else %>
-                  <% range = (i*50-1).downto((i-1)*50) %>
+      <% @ideas.reverse.each do |idea| %>
+        <% if idea.photo.exists? %>
+          <% photoExists = true %>
+          <div class="item w2">
+          <%= link_to idea, :class => "ideaLink w2" do %><%end%>
+        <% else %>
+          <div class="item">
+          <%= link_to idea, :class => "ideaLink" do %><%end%>
+        <% end %>
+            <% if photoExists %>
+              <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>
+            <% end %>
+            <% if photoExists %>
+              <p class="pw2">
+            <% else %>
+              <p>
+            <% end %>
+              <%= idea.blurb %>
+            <p>
+
+            <% if photoExists %>
+              <div class="item-buttons-w2">
+            <% else %>
+              <div class="item-buttons">
+            <% end %>
+
+              <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id, :method => :put do %>
+                <%= image_tag "icon_18944.png" %>
               <% end %>
-              <% range.each do |j| %>
-                <% idea = @ideas[j] %>
-                <% if idea.photo.exists? %>
-                  <% photoExists = true %>
-                  <div class="item w2">
-                  <%= link_to idea, :class => "ideaLink w2" do %><%end%>
-                <% else %>
-                  <div class="item">
-                  <%= link_to idea, :class => "ideaLink" do %><%end%>
-                <% end %>
-                    <% if photoExists %>
-                      <%= image_tag(idea.photo.url(:medium), :class => "img-container")%>
-                    <% end %>
-                    <% if photoExists %>
-                      <p class="pw2">
-                    <% else %>
-                      <p>
-                    <% end %>
-                      <%= idea.blurb %>
-                    <p>
+              <div class="follow-count">
+                <%= idea.followers_count %>
+              </div>
 
-                    <% if photoExists %>
-                      <div class="item-buttons-w2">
-                    <% else %>
-                      <div class="item-buttons">
-                    <% end %>
-
-                      <%= link_to follow_path(idea), :class => "follow-button", :remote => true, :id => idea.id, :method => :put do %>
-                        <%= image_tag "icon_18944.png" %>
-                      <% end %>
-                      <div class="follow-count">
-                        <%= idea.followers_count %>
-                      </div>
-
-                      <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id, :method => :put do %>
-                          <%= image_tag "icon_19367.png" %>
-                      <% end %>
-                      <div class="like-count">
-                        <%= idea.votes.size %>
-                      </div>
+              <%= link_to like_path(idea) , :class => "like-button", :remote => true, :id => idea.id, :method => :put do %>
+                  <%= image_tag "icon_19367.png" %>
+              <% end %>
+              <div class="like-count">
+                <%= idea.votes.size %>
+              </div>
 
 
-                    </div>
-                  </div>
-              <%end%>
-          <%end%>
-      </div>
+            </div>
+          </div>
+      <%end%>
+    </div>
   </div>
 </div>
 
