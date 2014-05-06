@@ -118,11 +118,17 @@
         </div>
         <div class="section updates">
             <div class="updates title">
-                Updates Ticker
+                Updates
             </div>
-            <hr>
             <div class="updates ticks">
-                <%= render :partial => @idea.updates.reverse %>
+                <% if @idea.updates.count != 0 %>
+                    <%= render :partial => @idea.updates.reverse %>
+                <% else %>
+                    <hr>
+                    <div class="updates tick">
+                       Nothing yet, check back soon!
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
